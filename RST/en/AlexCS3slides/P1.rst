@@ -34,7 +34,7 @@ Project 1 Design
    |   Wrong A: When they get too long
    |   Right A: When they separate meaningfully different behavior
    | Things you need in this project
-   |   Multiple data structures (hash table class, memory manager class)
+   |   Data structure (BST class)
    |   "Main" routine, that sets things up
    |   Command syntactic parsing (separate the behavior, NOT the code length)
    |   Command semantic processing (separate the behavior, NOT the code length)
@@ -57,19 +57,16 @@ Project 1 Design
    |   Incremental Development is crucial to success
    | Scheduling the project:
    |   1. Main/Parser first.
-   |   2. World Database class next.
-   |   3. Hash table, implemented with direct access to strings in memory
-          (hidden behind record interface)
-   |   4. Memory manager last!
-         
+   |   2. Database class next.
+   |   3. BST
 
 .. slide:: General Project Info              
 
    | You are usually banned from using standard Java data structures
      classes
    |   You may **not** use things like ``HashMap``, ``ListArray``, ``Vector``
-   |     Exception: You may use ``ListArray`` to thelp you with
-         processing the keywords in the parser.
+   |     Exception: You may use ``List`` or ``Stack`` to help you with
+         iterating through the BST
    |   You may use standard language features like arrays
    |   You may use string and file manipulation classes/methods that
        make parsing of the command file easy.          
@@ -80,80 +77,13 @@ Project 1 Design
    | Every competent software development organization enforces some
      coding style.
    |   Web-CAT enforces a particular coding style.
-   | Generalize your container classes (hash table, memory manager)
-   |   For P1, your memory manager should not know anything about the
-       rest of the project, it just stored bytes
-   |   See the Seminar class serializer/deserializer
-
+   | Generalize your BST class
+   |   For P1, your BST should not know anything about the
+       rest of the project, it just stores Node objects
    
-.. slide:: Container Classes: Hash Table
-
-   | The hash table is a container class. A container class is anything
-     that stores a collection of arbitrary objects.
-   | Want to support any record type. (OK to assume an integer key.)
-   | Hide details behind some Record class
-   | Need to deal with concept of comparison. Your record should give
-     you back the string as its key.
-
-Project 1 Hashing
------------------
-
-.. slide:: What you need to know about Hashing
-
-   * Read Module 10.1, Skim 10.3, Read 10.6 carefully, Read 10.7.4
-     Double Hashing, Read 10.9 Deletion
-
-   * Feel free to use code posted as part of OpenDSA modules (Insert, search)
-
-   * You can write Hash Table Class **assuming** that it uses the
-     given hash function, and that the key is an integer.
-
-     
-.. slide:: Double Hashing
-
-   .. inlineav:: collisionCON8 ss
-      :long_name: Double Hashing Slideshow 3
-      :links: AV/Hashing/collisionCON.css
-      :scripts: AV/Hashing/collisionCON8.js
-      :output: show
-
-
-.. slide:: Primary design issue: Communications
-
-   * World/DB class, Hash Table, Memory Manager need appropriate
-     coordination.
-   
-   * World probably initializes memory manager, and calls memory
-     manager to insert/process records. Store resulting Handle in a
-     Record to pass to hash table.
-   
-   * Hash table does not need to know that there is a Memory Manager,
-     or Seminar records.
-   
-   * Record class and Handle class can hide most implementation details.
-
-     
-.. slide:: What is stored in the hash table?
-
-   * Clearly there has to be a key, and there has to be a value
-     (a record?)
-   
-   * The key is an integer (ID value for the Seminar, but the hash
-     table class doesn't know that)
-  
-   * The "value" might be dealt with in different ways.
-      * Definitely NOT the byte array (this is in memory manager)
-      * Maybe the handle for the record? That means that the hash
-        table needs to know about handles.
-
-   * Can hide handles behind a Record class.
-      * What is key? Store integer? Get from Record? Space vs. Time
-        tradeoff, either is reasonable
-
-
 .. slide:: Milestone 2
 
    * Must pass some number of tests, some mutant coverage (from your
      JUnit tests), some style points
 
-   * Functionally: Get the hash table working, at least inserts.
+   * Functionally: Command Processor, Rectangle, and BST insert and dump working

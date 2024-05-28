@@ -64,8 +64,14 @@
       "AlexCS3slides/Intro": {},
       "AlexCS3slides/Testing": {},
       "AlexCS3slides/ProjManage": {},
-      "AlexCS3slides/Math": {},
-      "AlexCS3slides/AlgAnal": {}
+      "AlexCS3slides/Math": {}
+    },
+    "Week 2": {
+      "AlexCS3slides/P1": {},
+      "AlexCS3slides/AlgAnal": {},
+      "AlexCS3slides/Binary": {},
+      "AlexCS3slides/BST": {},
+      "AlexCS3slides/Binary3": {}
     }
   }
 }
