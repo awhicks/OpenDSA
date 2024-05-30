@@ -68,10 +68,15 @@
     },
     "Week 2": {
       "AlexCS3slides/P1": {},
-      "AlexCS3slides/AlgAnal": {},
       "AlexCS3slides/Binary": {},
       "AlexCS3slides/BST": {},
       "AlexCS3slides/Binary3": {}
+    },
+    "Week 3": {
+      "AlexCS3slides/AlgAnal": {},
+      "AlexCS3slides/Lists": {},
+      "AlexCS3slides/StackQueue": {},
+      "AlexCS3slides/Overconstrained": {}
     }
   }
 }
