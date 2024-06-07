@@ -77,6 +77,11 @@
       "AlexCS3slides/Lists": {},
       "AlexCS3slides/StackQueue": {},
       "AlexCS3slides/Overconstrained": {}
+    },
+    "Week 4" : {
+      "AlexCS3slides/Coding": {},
+      "AlexCS3slides/Heaps": {},
+      "AlexCS3slides/Huffman": {}
     }
   }
 }
