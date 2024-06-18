@@ -18,7 +18,7 @@ Project 3 Design
 
 .. slide:: Project 3 Design
 
-   | Implement Quicksort
+   | Implement HeapSort
    |    On disk as a big virtual memory
    |    The disk file is mediated by a buffer pool for better
         performance
@@ -69,8 +69,8 @@ Project 3 Design
 
    #. Download starter kit. Submit to Web-CAT. Look at the test case
       info.
-   #. Make the Quicksort work with a stubbed buffer pool that is
-      simply holding the array in memory. Replace Quicksort [] with
+   #. Make the HeapSort work with a stubbed buffer pool that is
+      simply holding the array in memory. Replace HeapSort [] with
       method calls. Make sure that you read keys and swap records
       correctly.
    #. Start adding buffer pool functionality until that works

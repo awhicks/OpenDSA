@@ -83,13 +83,17 @@
       "AlexCS3slides/Heaps": {},
       "AlexCS3slides/Huffman": {},
       "AlexCS3slides/Trie": {},
-      "AlexCS3slides/Sorting1": {}
+      "AlexCS3slides/Sorting1": {},
+      "AlexCS3slides/Sorting2": {}
     },
     "Week 5": {
-      "AlexCS3slides/Sorting2": {},
+      "AlexCS3slides/P2": {},
       "AlexCS3slides/FileProc": {},
       "AlexCS3slides/Buffering": {},
       "AlexCS3slides/Sorting3": {}
+    },
+    "Week 6": {
+      "AlexCS3slides/Midterm": {}
     }
   }
 }
