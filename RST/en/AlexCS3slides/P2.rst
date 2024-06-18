@@ -10,13 +10,13 @@
    :autoslides: False
 
 ================
-Project 3 Design
+Project 2 Design
 ================
 
-Project 3 Design
+Project 2 Design
 ----------------
 
-.. slide:: Project 3 Design
+.. slide:: Project 2 Design
 
    | Implement HeapSort
    |    On disk as a big virtual memory
