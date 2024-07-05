@@ -94,6 +94,24 @@
     },
     "Week 6": {
       "AlexCS3slides/Midterm": {}
+    },
+    "Week 7-8": {
+      "AlexCS3slides/MemManage": {},
+      "AlexCS3slides/Hashing": {},
+      "AlexCS3slides/P3": {}
+    },
+    "Week 9-10": {
+      "AlexCS3slides/Graphs": {},
+      "AlexCS3slides/Union-Find": {}
+    },
+    "Week 11": {
+      "AlexCS3slides/Indexing": {},
+      "AlexCS3slides/TTTree": {},
+      "AlexCS3slides/BTree": {}
+    },
+    "Week 12": {
+      "AlexCS3slides/SkipList": {},
+      "AlexCS3slides/Final": {}
     }
   }
 }
