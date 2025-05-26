@@ -1,0 +1,122 @@
+{
+  "title": "DSA Coursenotes",
+  "desc": "DSA 2025 Coursenotes",
+  "build_dir": "Books",
+  "code_dir": "SourceCode/",
+  "lang": "en",
+  "code_lang": {
+    "Java_Generic": {
+      "ext": [
+        "java"
+      ],
+      "label": "Java (Generic)",
+      "lang": "java"
+    },
+    "Java": {
+      "ext": [
+        "java"
+      ],
+      "label": "Java",
+      "lang": "java"
+    },
+    "C++": {
+      "ext": [
+        "cpp",
+        "h"
+      ],
+      "label": "C++",
+      "lang": "C++"
+    }
+  },
+  "tabbed_codeinc": false,
+  "build_JSAV": false,
+  "suppress_todo": true,
+  "glob_exer_options": {},
+  "glob_ss_options": {
+    "threshold": 1.0, 
+    "points": 0.0, 
+    "required": false
+  }, 
+  "glob_ff_options": {
+    "threshold": 1.0, 
+    "points": 0.0, 
+    "required": false
+  },
+  "glob_ka_options": {
+    "threshold": 5, 
+    "points": 1.0, 
+    "required": true
+  }, 
+  "glob_extr_options": {
+    "code-workout": {
+      "points": 2.0
+    }, 
+    "points": 1.0
+  }, 
+  "glob_pe_options": {
+    "threshold": 0.9, 
+    "points": 2.0, 
+    "required": true
+  }, 
+  "chapters": {
+    "Week 1": {
+      "AlexCS3slides/CourseIntro": {},
+      "AlexCS3slides/Intro": {},
+      "AlexCS3slides/Testing": {},
+      "AlexCS3slides/ProjManage": {},
+      "AlexCS3slides/P1": {}
+    },
+    "Week 2": {
+      "AlexCS3slides/Binary": {},
+      "AlexCS3slides/BST": {},
+      "AlexCS3slides/Binary3": {},
+      "AlexCS3slides/Math": {}
+    },
+    "Week 3": {
+      "AlexCS3slides/AlgAnal": {},
+      "AlexCS3slides/Lists": {},
+      "AlexCS3slides/StackQueue": {},
+      "AlexCS3slides/Overconstrained": {}
+    },
+    "Week 4": {
+      "AlexCS3slides/Coding": {},
+      "AlexCS3slides/Heaps": {},
+      "AlexCS3slides/Huffman": {},
+      "AlexCS3slides/Trie": {},
+      "AlexCS3slides/P2": {}
+    },
+    "Week 5": {
+      "AlexCS3slides/Sorting1": {},
+      "AlexCS3slides/Sorting2": {},
+      "AlexCS3slides/Sorting3": {}
+    },
+    "Week 6": {
+      "AlexCS3slides/FileProc": {},
+      "AlexCS3slides/Buffering": {},
+      "AlexCS3slides/Midterm": {}
+    },
+    "Week 7": {
+      "AlexCS3slides/Hashing": {}
+    },
+    "Week 8": {
+      "AlexCS3slides/MemManage": {},
+      "AlexCS3slides/P3": {},
+      "AlexCS3slides/P3Hash": {}
+    },
+    "Week 9": {
+      "AlexCS3slides/Graphs": {}
+    },
+    "Week 10": {
+      "AlexCS3slides/Union-Find": {}
+    },
+    "Week 11": {
+      "AlexCS3slides/Indexing": {},
+      "AlexCS3slides/TTTree": {},
+      "AlexCS3slides/BTree": {}
+    },
+    "Week 12": {
+      "AlexCS3slides/SkipList": {},
+      "AlexCS3slides/Final": {}
+    }
+  }
+}
