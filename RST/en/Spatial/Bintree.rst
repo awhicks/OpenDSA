@@ -4,11 +4,16 @@
 .. distributed under an MIT open source license.
 
 .. avmetadata::
+   :title: The Bintree
    :author: Cliff Shaffer
+   :institution: Virginia Tech
    :requires: BST; Spatial data structures
    :satisfies: Bintree
    :topic: Spatial Data Structures
    :keyword: Spatial Data Structures, Bintree
+   :naturallanguage: en
+   :programminglanguage: N/A
+   :description: Introduction to the Bintree data structure.
 
 
 The Bintree
@@ -205,8 +210,7 @@ class or the tree class?
 For example, on an insert operation, you could have the tree class
 control the flow down the tree, looking at (querying) the nodes to see
 their type and reacting accordingly.
-This is the approach used by the BST implementation in
-Module :numref`BST`.
+This is the approach used by a typical BST implementation.
 An alternate approach is to have the node class do the work.
 That is, you have an insert method for the nodes.
 If the node is internal, it passes the city record to the appropriate

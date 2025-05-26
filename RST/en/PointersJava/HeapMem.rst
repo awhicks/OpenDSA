@@ -4,11 +4,16 @@
 .. distributed under an MIT open source license.
 
 .. avmetadata::
-   :author: Nick Parlante, Cliff Shaffer, Sally Hamouda and Mostafa Mohammed
+   :title: Heap Memory
+   :author: Nick Parlante; Cliff Shaffer; Sally Hamouda; Mostafa Mohammed
+   :institution: Stanford University; Virginia Tech
    :requires: Local memory
    :satisfies: Heap Memory
    :topic: Pointers
    :keyword: Pointers; Heap Memory; Garbage Disposal
+   :naturallanguage: en
+   :programminglanguage: Java
+   :description: Introduces the concept of heap memory and global variables.
 
 
 Heap Memory
@@ -132,7 +137,6 @@ from heap memory by garbage collection:
    :scripts: AV/Pointers/garbageDisposalCON.js
    :output: show
    :keyword: Pointers; Heap Memory; Garbage Disposal
-
 
 Before seeing the exact details, let's look at a rough example of
 allocation and deallocation in the heap.

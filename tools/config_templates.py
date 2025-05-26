@@ -51,7 +51,7 @@ rst_header_unicode = '''\
 index_header = '''\
 .. This file is part of the OpenDSA eTextbook project. See
 .. http://opendsa.org for more details.
-.. Copyright (c) 2011-2023 by the OpenDSA Project Contributors, and
+.. Copyright (c) 2011-2025 by the OpenDSA Project Contributors, and
 .. distributed under an MIT open source license.
 
 .. OpenDSA documentation master file, created by
@@ -88,31 +88,16 @@ SPHINXOPTS    = %(sphinx_options)s
 # -vv and -vvv are options for verbose build output
 # -P is for starting pdb exactly when and where exception occurs
 HTMLDIR       = %(rel_book_output_path)s
-MINIMIZE      = uglifyjs
 TAGS = %(tag)s
 .PHONY: clean html
 
-all: html min
+all: html
 
 clean:
 	-rm -rf ./$(HTMLDIR)*
 	-rm source/ToDo.rst
 
 cleanbuild: clean html
-
-min: min-underscore min-doctools min-searchtools
-
-min-underscore:
-	@echo 'Minimizing $(HTMLDIR)_static/underscore.js'
-	@$(MINIMIZE) $(HTMLDIR)_static/underscore.js > $(HTMLDIR)_static/underscore.js
-
-min-doctools:
-	@echo 'Minimizing $(HTMLDIR)_static/doctools.js'
-	@$(MINIMIZE) $(HTMLDIR)_static/doctools.js > $(HTMLDIR)_static/doctools.js
-
-min-searchtools:
-	@echo 'Minimizing $(HTMLDIR)_static/searchtools.js'
-	@$(MINIMIZE) $(HTMLDIR)_static/searchtools.js > $(HTMLDIR)_static/searchtools.js
 
 html:
 	$(SPHINXBUILD) $(TAGS) $(SPHINXOPTS) -b html source $(HTMLDIR)
@@ -167,9 +152,9 @@ on_slides = os.environ.get('SLIDES', None) == "yes"
 # Add any Sphinx extension module names here, as strings. They can be extensions
 # coming with Sphinx (named 'sphinx.ext.*') or your custom ones.
 
-extensions = ['sphinx.ext.autodoc', 'sphinx.ext.doctest', 'sphinx.ext.todo', 'sphinx.ext.mathjax', 'sphinx.ext.ifconfig']
+extensions = ['sphinx.ext.autodoc', 'sphinx.ext.doctest', 'sphinx.ext.todo', 'sphinx.ext.mathjax', 'sphinx.ext.ifconfig', 'sphinxcontrib.jquery']
 
-ourCustoms = ['avembed', 'avmetadata', 'extrtoolembed', 'codeinclude', 'numref', 'chapnum', 'odsalink', 'odsascript', 'inlineav', 'html5', 'odsafig', 'odsatable', 'chapref', 'odsatoctree', 'showhidecontent', 'iframe']
+ourCustoms = ['avembed', 'avmetadata', 'extrtoolembed', 'codeinclude', 'chapnum', 'odsalink', 'odsascript', 'inlineav', 'html5', 'odsafig', 'odsatable', 'chapref', 'odsatoctree', 'showhidecontent', 'iframe']
 
 customsDir = '%(odsa_dir)sRST/ODSAextensions/odsa/'
 for c in ourCustoms:
@@ -200,7 +185,7 @@ master_doc = 'index'
 
 # General information about the project.
 project = u'OpenDSA'
-copyright = u'2011-2023 by OpenDSA Project Contributors and distributed under an MIT license'
+copyright = u'2011-2025 by OpenDSA Project Contributors and distributed under an MIT license'
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the
@@ -245,7 +230,7 @@ exclude_patterns = []
 highlight_language = 'guess' #'%(code_lang)s'
 
 # The name of the Pygments (syntax highlighting) style to use.
-pygments_style = 'sphinx' #'sphinx'
+pygments_style = 'xcode' #'sphinx'
 
 # A list of ignored prefixes for module index sorting.
 #modindex_common_prefix = []
@@ -478,7 +463,7 @@ config_js_template = '''\
 
 # Add the index.html file that redirects to the build/html directory
 index_html_template = '''\
-<html>
+<html lang="en">
 <head>
   <script>
     window.location.replace(window.location.href.replace(/\\/(index.html)?$/, '/%s'));

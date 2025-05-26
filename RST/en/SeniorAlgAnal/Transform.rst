@@ -4,12 +4,16 @@
 .. distributed under an MIT open source license.
 
 .. avmetadata::
-   :author: Cliff Shaffer, Irena Shaffer
+   :title: The Transformation Concept
+   :author: Cliff Shaffer; Irena Shaffer
+   :institution: Virginia Tech
    :requires: logarithms
    :satisfies: transforms
    :topic: Algorithms: Transforms
-   :keyword: Algorithm Analysis; Transforms
-
+   :keyword: Transforms; Polynomial Multiplication Algorithm
+   :naturallanguage: en
+   :programminglanguage: N/A
+   :description: Introduces the concept of a transform. Examples include the slide rule as a transformation for integer multiplication, and polynomial multiplication.
 
 The Transformation Concept
 ==========================
@@ -21,7 +25,7 @@ Multiplying two large numbers is considerably more difficult than
 adding them.
 Recall your grade-school algorithms for adding and multiplying big
 numbers.
-Adding two :math:`n` -digit numbers is done by simply moving from
+Adding two :math:`n`-digit numbers is done by simply moving from
 right to left through both numbers, for a total of :math:`O(n)` work.
 But the cost to multiply two :math:`n`-digit numbers directly is
 :math:`O(n^2)` since you essentially need to multiply each digit of
@@ -51,7 +55,7 @@ nature.
 
 This process for doing multiplication quickly is an example of using a
 :term:`transformation` to speed up a problem.
-We have transformed the input values by taking their logarithm, and
+We have transformed the input values by taking their logarithm,
 then did a cheap operation (addition) on the transformed values, and
 then reversed the transformation (with an anti-log) to get the true
 answer to the original problem.
@@ -77,7 +81,7 @@ a polynomial of degree :math:`n-1`, expressed as
 
 |
 
-Alternatively, an :math:`n-1` -degree polynomial can be uniquely
+Alternatively, an :math:`n-1`-degree polynomial can be uniquely
 represented by a list of its values at :math:`n` distinct points.
 Finding the value for a polynomial at a given point is called
 :term:`evaluation`.

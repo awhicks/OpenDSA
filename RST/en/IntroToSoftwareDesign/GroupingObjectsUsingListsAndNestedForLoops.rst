@@ -4,7 +4,13 @@
 .. distributed under an MIT open source license.
 
 .. avmetadata::
-   :author: Molly
+   :title: Grouping Objects Using Lists and Nested For Loops
+   :author: Molly Domino
+   :institution: Virginia Tech
+   :keyword: Lists; Sets; Maps; For Loops; Interfaces
+   :naturallanguage: en
+   :programminglanguage: Java
+   :description: First semester programming course introduction to using lists to group objects.
 
 Grouping Objects Using Lists and Nested For Loops
 =================================================
@@ -520,7 +526,7 @@ Syntax Practice 8b: Lists
 -------------------------
 
 .. extrtoolembed:: 'Syntax Practice 8b: Lists'
-   :workout_id: 1860
+   :workout_id: 1859
 
 
 Nested For Loops
@@ -623,7 +629,7 @@ Syntax Practice 8c: Nested Loops
 --------------------------------
 
 .. extrtoolembed:: 'Syntax Practice 8c: Nested Loops'
-   :workout_id: 1491
+   :workout_id: 1860
 
 
 Check Your Understanding
