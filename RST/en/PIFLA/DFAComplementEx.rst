@@ -4,10 +4,15 @@
 .. distributed under an MIT open source license.
 
 .. avmetadata::
-   :author: Mostafa Mohammed, Cliff Shaffer
+   :title: DFA Complement Exercises
+   :author: Mostafa Mohammed; Cliff Shaffer
    :requires: Deterministic Finite Automata
    :satisfies:
    :topic: DFA Complement exercise
+   :keyword: Finite Automata; Deterministic Finite Acceptor
+   :naturallanguage: en
+   :programminglanguage: N/A
+   :description: Exercises where user constructs the DFA for the complement of a language.
 
 DFA Complement Exercise
 =======================
@@ -41,3 +46,5 @@ take into account the trap state.
 
 .. avembed:: AV/OpenFLAP/exercises/FLAssignments/FA/DFANotevena3b.html pe
    :long_name: Construct DFA of language complement
+
+

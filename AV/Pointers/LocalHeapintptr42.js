@@ -4,8 +4,8 @@
 // Title: A Heap Example
 // Author: Sushma Mandava
 // Institution: Virginia Tech
-// Features: Code Visualization
-// Keyword: Pointers; Pointer; Reference; Object
+// Features: Code Tracing Presentation
+// Keyword: Memory Allocation
 // Natural Language: en
 // Programming Language: Java
 /* Description: Slideshow demonstrating the memory allocation and deallocation. */

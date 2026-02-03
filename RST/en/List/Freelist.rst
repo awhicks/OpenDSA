@@ -3,13 +3,17 @@
 .. Copyright (c) 2012-2020 by the OpenDSA Project Contributors, and
 .. distributed under an MIT open source license.
 
-.. avmetadata:: 
+.. avmetadata::
+   :title: Freelists
    :author: Cliff Shaffer
+   :institution: Virginia Tech
    :requires: linked list
    :satisfies: freelist
    :topic: Lists
-   :keyword: Freelists
-
+   :keyword: Freelist
+   :naturallanguage: en
+   :programminglanguage: Java
+   :description: Discusses the purpose and implementation of a freelist for more efficient memory management.
 
 Freelists
 =========
@@ -101,3 +105,5 @@ collection time.
 
 .. [#] A language like C++ could use operator overloading to redefine
    the ``new`` and ``delete`` operators.
+
+

@@ -10,7 +10,7 @@
    :requires:
    :satisfies: ADT; metaphor
    :topic: Abstract Data Types
-   :keyword: Abstract Data Types
+   :keyword: Abstract Data Type
    :naturallanguage: en
    :programminglanguage: N/A
    :description: Introduction to the concept of an Abstract Data Type
@@ -311,10 +311,18 @@ The interface becomes a form of communication between the two programmers.
    Within the class, a variety of physical implementations for lists
    is possible.
 
+Concept Map Exercise
+--------------------
+
 .. avembed:: Exercises/CMP/CMdatatypeSumm.html ka
    :long_name: Concept map data types exercises
    :keyword: Abstract Data Types; Concept Map
 
+Review Questions
+----------------
+
 .. avembed:: Exercises/Design/IntroADTSumm.html ka
    :long_name: ADT Review Questions
    :keyword: Abstract Data Types
+
+

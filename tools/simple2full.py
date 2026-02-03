@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 ''' Converts a simplified configuration file to a full configuration file
-''' 
+'''
 
 import sys, os
 import json
@@ -23,7 +23,7 @@ current_module_base = None # the name of the current module without the folder o
 expanded = False # whether we are generating the expanded version of the full configuration
                  # which contains additional info about the exercises
 
-# default options that will be used if options 
+# default options that will be used if options
 # aren't specified for a given exercise
 _default_ex_options = {
     'ka': {
@@ -31,19 +31,19 @@ _default_ex_options = {
       'points': 1,
       'threshold': 5,
       'partial_credit': False
-    }, 
+    },
     'ss': {
       'required': False,
       'points': 0,
       'threshold': 1,
       'partial_credit': False
-    }, 
+    },
     'ff': {
       'required': False,
       'points': 0,
       'threshold': 1,
       'partial_credit': False
-    }, 
+    },
     'pe': {
       'required': True,
       'points': 1,
@@ -133,6 +133,16 @@ inlineav_element = '''\
 odsalink_element = '''<odsalink>%(odsalink)s</odsalink>'''
 odsascript_element = '''<odsascript>%(odsascript)s</odsascript>'''
 
+splicetoolembed_element = '''\
+<splicetoolembed
+    url="%(url)s"
+    name="%(name)s"
+    long_name="%(long_name)s"
+    height="%(height)s"
+    width="%(width)s"
+    mod_name="%(mod_name)s">
+</splicetoolembed>
+'''
 
 class avembed(Directive):
   required_arguments = 2
@@ -140,7 +150,11 @@ class avembed(Directive):
   final_argument_whitespace = True
   option_spec = {
                   'long_name': directives.unchanged,
-                  'url_params': directives.unchanged
+                  'url_params': directives.unchanged,
+                  'title': directives.unchanged,
+                  'keyword': directives.unchanged,
+                  'naturallanguage': directives.unchanged,
+                  'institution': directives.unchanged
                 }
   has_content = True
 
@@ -182,7 +196,14 @@ class avmetadata(Directive):
                  'topic': directives.unchanged,
                  'requires': directives.unchanged,
                  'satisfies': directives.unchanged,
-                 'prerequisites': directives.unchanged
+                 'prerequisites': directives.unchanged,
+                 'title': directives.unchanged,
+                 'keyword': directives.unchanged,
+                 'naturallanguage': directives.unchanged,
+                 'description': directives.unchanged,
+                 'programminglanguage': directives.unchanged,
+                 'nocatalog': directives.unchanged,
+                 'institution': directives.unchanged
                  }
 
   def run(self):
@@ -233,7 +254,7 @@ class extrtoolembed(Directive):
     self.options['partial_credit'] = get_default_ex_option('extr', 'partial_credit', self.options['learning_tool'])
 
     self.options['mod_name'] = current_module_base
-    
+
     res = extertool_element % (self.options)
     return [nodes.raw('', res, format='xml')]
 
@@ -250,7 +271,11 @@ class inlineav(Directive):
                   'required': directives.unchanged,
                   'threshold': directives.unchanged,
                   'scripts': directives.unchanged,
-                  'links': directives.unchanged
+                  'links': directives.unchanged,
+                  'title': directives.unchanged,
+                  'keyword': directives.unchanged,
+                  'naturallanguage': directives.unchanged,
+                  'institution': directives.unchanged
                 }
   has_content = True
 
@@ -264,7 +289,7 @@ class inlineav(Directive):
     self.options['points'] = get_default_ex_option(self.options['type'], 'points')
     self.options['threshold'] = get_default_ex_option(self.options['type'], 'threshold')
     self.options['partial_credit'] = get_default_ex_option(self.options['type'], 'partial_credit')
-    
+
     self.options['mod_name'] = current_module_base
 
     if self.options['exer_name'] in ex_options[current_module]:
@@ -448,6 +473,7 @@ class odsafig(Directive):
   def run(self):
     return [nodes.raw('', '<odsafig>null</odsafig>', format='xml')]
 
+
 class iframe(Directive):
   '''
   '''
@@ -461,9 +487,41 @@ class iframe(Directive):
                   'name': directives.unchanged,
                   'absolute_url': directives.flag,
                   }
-  
+
   def run(self):
     return [nodes.raw('', '<iframe>null</iframe>', format='xml')]
+
+
+class splicetoolembed(Directive):
+  '''
+  '''
+  required_arguments = 1
+  optional_arguments = 4
+  final_argument_whitespace = True
+  has_content = True
+  option_spec = {
+                  'height': directives.unchanged,
+                  'width': directives.unchanged,
+                  'name': directives.unchanged,
+                  'absolute_url': directives.flag,
+                  }
+
+  def run(self):
+    self.options['url'] = self.arguments[0]
+    self.options['mod_name'] = current_module_base
+
+    if 'name' not in self.options:
+      self.options['name'] = os.path.basename(self.options['url']).partition('.')[0]
+    if 'long_name' not in self.options:
+      self.options['long_name'] = self.options['name']
+    if 'height' not in self.options:
+      self.options['height'] = '600'
+    if 'width' not in self.options:
+      self.options['width'] = '800'
+
+    res = splicetoolembed_element % (self.options)
+    return [nodes.raw('', res, format='xml')]
+
 
 class showhidecontent(Directive):
   '''
@@ -480,7 +538,7 @@ class showhidecontent(Directive):
                  'long_name': directives.unchanged,
                  'showhide': showhide
                 }
-  
+
   def run(self):
     return [nodes.raw('', '<showhidecontent>null</showhidecontent>', format='xml')]
 
@@ -595,7 +653,29 @@ def extract_sec_config(sec_json):
     sec_title = None
     for k, v in x.items():
       if k == 'title':
-        sec_title = v
+        # handle titles with math content
+        if isinstance(v, dict) or isinstance(v, OrderedDict):
+          # extract text from title
+          if '#text' in v:
+            parts = []
+            if isinstance(v['#text'], list):
+              parts.extend(v['#text'])
+            else:
+              parts.append(v['#text'])
+            # if math content present, add it
+            if 'emphasis' in v:
+              if isinstance(v['emphasis'], list):
+                for emp in v['emphasis']:
+                  if '#text' in emp:
+                    parts.append(emp['#text'])
+              elif '#text' in v['emphasis']:
+                parts.append(v['emphasis']['#text'])
+            sec_title = ''.join(str(p) for p in parts if p)
+          else:
+            # go back to the string representation otherwise
+            sec_title = str(v)
+        else:
+          sec_title = v
         sections_config[sec_title] = OrderedDict()
 
       if k == 'raw':
@@ -609,11 +689,11 @@ def extract_sec_config(sec_json):
         elif isinstance(v, dict):
           if 'raw' in list(v.keys()):
             sections_config[sec_title].update(extract_exs_config(v['raw']))
-    if sec_title in sect_options[current_module]:
+    if sec_title and sec_title in sect_options[current_module]:
       for k, v in sect_options[current_module][sec_title].items():
         sections_config[sec_title][k] = v
       del sect_options[current_module][sec_title]
-    if 'extertool' in list(sections_config[sec_title].keys()):
+    if sec_title and 'extertool' in list(sections_config[sec_title].keys()):
       sections_config[sec_title] = sections_config[sec_title]['extertool']
 
   return sections_config
@@ -665,6 +745,22 @@ def extract_exs_config(exs_json):
           for key, value in ex_options[current_module][ex_obj['@resource_name']].items():
               exs_config['extertool'][key] = value
           del ex_options[current_module][ex_obj['@resource_name']]
+
+      if isinstance(x, dict) and 'splicetoolembed' in list(x.keys()):
+        ex_obj = x['splicetoolembed']
+        exer_name = ex_obj['@name']
+        exs_config[exer_name] = OrderedDict()
+        exs_config[exer_name]['long_name'] = ex_obj['@long_name']
+        exs_config[exer_name]['url'] = ex_obj['@url']
+        exs_config[exer_name]['height'] = ex_obj['@height']
+        exs_config[exer_name]['width'] = ex_obj['@width']
+        if expanded:
+          exs_config[exer_name]['type'] = 'splicetoolembed'
+          exs_config[exer_name]['mod_name'] = ex_obj['@mod_name']
+        if exer_name in ex_options[current_module]:
+          for key, value in ex_options[current_module][exer_name].items():
+              exs_config[exer_name][key] = value
+          del ex_options[current_module][exer_name]
 
       if isinstance(x, dict) and 'inlineav' in list(x.keys()) and x['inlineav']['@type'] == "ss":
         ex_obj = x['inlineav']
@@ -750,6 +846,23 @@ def extract_exs_config(exs_json):
               exs_config['extertool'][key] = value
           del ex_options[current_module][ex_obj['@resource_name']]
 
+    if 'splicetoolembed' in list(exs_json.keys()):
+      ex_obj = exs_json['splicetoolembed']
+      exer_name = ex_obj['@name']
+      exs_config[exer_name] = OrderedDict()
+      exs_config[exer_name]['long_name'] = ex_obj['@long_name']
+      exs_config[exer_name]['url'] = ex_obj['@url']
+      exs_config[exer_name]['height'] = ex_obj['@height']
+      exs_config[exer_name]['width'] = ex_obj['@width']
+      if expanded:
+        exs_config[exer_name]['type'] = 'splicetoolembed'
+        exs_config[exer_name]['mod_name'] = ex_obj['@mod_name']
+      if exer_name in ex_options[current_module]:
+        #KVP
+        for key, value in ex_options[current_module][exer_name].items():
+          exs_config[exer_name][key] = value
+        del ex_options[current_module][exer_name]
+
     if 'inlineav' in list(exs_json.keys()) and exs_json['inlineav']['@type'] == "ss":
       ex_obj = exs_json['inlineav']
       exer_name = ex_obj['@exer_name']
@@ -815,6 +928,7 @@ def register():
   directives.register_directive('slide', slide)
   directives.register_directive('slideconf', slideconf)
   directives.register_directive('iframe', iframe)
+  directives.register_directive('splicetoolembed', splicetoolembed)
   directives.register_directive('showhidecontent', showhidecontent)
 
 
@@ -835,7 +949,7 @@ def remove_markup(source):
   return source
 
 def get_chapter_module_files(conf_data):
-  ''' get a dictionary where the keys are the chapter names and the values are 
+  ''' get a dictionary where the keys are the chapter names and the values are
       the paths to the rst files of the modules in the chapter
   '''
   files = OrderedDict()
@@ -848,10 +962,10 @@ def get_chapter_module_files(conf_data):
   return files
 
 def get_options(conf_data):
-  ''' 
-  gets a tuple where: 
-    the first item is a dictionary where the keys are the 
-      short names of exercises (or sections) and the values are the options that 
+  '''
+  gets a tuple where:
+    the first item is a dictionary where the keys are the
+      short names of exercises (or sections) and the values are the options that
       were specified for each exercise
     the second item is a dictionary where the keys are the names of sections and
      the values are options for each section
@@ -887,7 +1001,7 @@ def get_options(conf_data):
       if 'long_name' in children:
         del children['long_name']
       for key, value in children.items():
-        if key in MODULE_FIELDS:  
+        if key in MODULE_FIELDS:
           mod_opts[module][key] = value
         elif any(k in EXERCISE_FIELDS for k in value):
           mod_ex[key] = value
@@ -895,7 +1009,7 @@ def get_options(conf_data):
           mod_sect[key] = value
       if len(mod_opts[module]) == 0:
         del mod_opts[module]
-  
+
   return (exercises, sections, mod_opts)
 
 def validate_glob_config(conf_data):
@@ -948,7 +1062,7 @@ def generate_full_config(config_file_path, slides, gen_expanded=False, verbose=F
 
   mod_files = get_chapter_module_files(conf_data)
   for chapter, files in mod_files.items():
-    
+
     full_config['chapters'][chapter] = OrderedDict()
     for x in files:
       rst_dir_name = x.split(os.sep)[-2]
@@ -986,6 +1100,11 @@ def generate_full_config(config_file_path, slides, gen_expanded=False, verbose=F
     for mod_name, sections in sect_options.items():
       for sect in sections:
         print_err('WARNING: the section "{0}" does not exist in module "{1}"'.format(sect, mod_name))
+
+    simple_config = read_conf_file(config_file_path)
+    if 'splicetoolembeds' in simple_config:
+      full_config['splicetoolembeds'] = simple_config['splicetoolembeds']
+
   return full_config
 
 if __name__ == '__main__':

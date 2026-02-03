@@ -1,6 +1,17 @@
 /*global ODSA */
 // Written by Jun Yang and Cliff Shaffer
 //Linked list insertion
+
+// Title: Linked List Insertion Slideshow
+// Author: Jun Yang; Cliff Shaffer
+// Institution: Virginia Tech
+// Features: Algorithm Visualization; Code Tracing Presentation
+// Keyword: Linked List
+// Natural Language: en
+// Programming Language: Java
+
+/* Description: Slideshow demonstrating insertion into a linked list. */
+
 $(document).ready(function() {
   "use strict";
   var av_name = "llistInsertCON";

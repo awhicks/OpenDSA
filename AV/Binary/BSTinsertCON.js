@@ -1,5 +1,16 @@
 /*global ODSA */
 // Insert slideshow
+
+// Title: BST Insert Slideshow
+// Author: Cliff Shaffer
+// Institution: Virginia Tech
+// Features: Algorithm Visualization; Code Tracing Presentation
+// Keyword: Binary Search Tree
+// Natural Language: en
+// Programming Language: Java
+
+/* Description: Slideshow visualizing recursive insert in a BST. */
+
 $(document).ready(function() {
   "use strict";
   var av_name = "BSTinsertCON";
@@ -26,7 +37,7 @@ $(document).ready(function() {
   var newParent = newnode.parent();
   var newedge = newParent.edgeToLeft();
   newedge.hide();
-  newedge.addClass("rededge");
+  newedge.addClass("emphasizeedge");
   bt.layout();
 
   var rt1 = av.pointer("rt", bt.root(), {anchor: "right top", top: -10});
@@ -107,7 +118,7 @@ $(document).ready(function() {
   pseudo.setCurrentLine("checknull");
   newnode.show();
   newnode.removeClass("invisnode");
-  newnode.addClass("rednode");
+  newnode.addClass("emphsizenode");
   newedge.hide();
   av.step();
 
@@ -133,7 +144,7 @@ $(document).ready(function() {
   av.umsg(interpret("sc17"));
   newedge = newnode.edgeToParent();
   newnode = newnode.parent();
-  newedge.addClass("rededge");
+  newedge.addClass("emphasizeedge");
   bt.root().left().removeClass("processing");
   rt1.target(newnode, {anchor: "left top"});
   pseudo.setCurrentLine("visitright");
@@ -148,7 +159,7 @@ $(document).ready(function() {
   av.umsg(interpret("sc18"));
   newedge = newnode.edgeToParent();
   newnode = newnode.parent();
-  newedge.addClass("rededge");
+  newedge.addClass("emphasizeedge");
   bt.root().removeClass("processing");
   rt1.target(newnode, {anchor: "left top"});
   pseudo.setCurrentLine("visitleft");
@@ -163,7 +174,7 @@ $(document).ready(function() {
   av.umsg(interpret("sc19"));
   rt1.hide();
   var root1 = av.pointer("root", bt.root(), {anchor: "right top", top: -10});
-  root1.arrow.addClass("thinredline");
+  root1.arrow.addClass("emphsizepointer");
   // This line should not be needed, but it is here to fix Raphael bug with arrows
   root1.arrow.css({stroke: "red"});
   pseudo.setCurrentLine("end");

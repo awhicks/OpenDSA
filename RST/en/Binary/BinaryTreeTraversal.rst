@@ -4,11 +4,16 @@
 .. distributed under an MIT open source license.
 
 .. avmetadata::
+   :title: Binary Tree Traversals
    :author: Cliff Shaffer
+   :institution: Virginia Tech
    :requires: binary tree terminology; recursion
    :satisfies: binary tree traversal
    :topic: Binary Trees
-   :keyword: Binary Tree Traversals; Inorder Traversal; Preorder Traversal; Postorder Traversal
+   :keyword: Inorder Traversal; Preorder Traversal; Postorder Traversal
+   :naturallanguage: en
+   :programminglanguage: Java
+   :description: Presents the standard binary tree traversals. Also discusses the pros and cons of various ways to implement these traversals recursively.
 
 
 Binary Tree Traversals
@@ -36,6 +41,9 @@ Preorder Traversal
 For example, we might wish to make sure that we visit any given node
 *before* we visit its children.
 This is called a :term:`preorder traversal`.
+One good time to use a preorder traversal is if we want to build a
+tree by copying another.
+It would be simplest to create a node before we create its children.
 
 .. _BinTravExample:
 
@@ -71,10 +79,13 @@ Postorder Traversal
 
 Alternatively, we might wish to visit each node only
 *after* we visit its children (and their subtrees).
-For example, this would be necessary if we wish to return all nodes
-in the tree to free store.
-We would like to delete the children of a node before deleting the
-node itself.
+For example, imagine that we are working in a language without garbage
+collection, like C++.
+If we want to delete a tree, we need to call the destructor on each of
+its nodes.
+We have to delete the children of a node A before we
+delete A, because otherwise we would no longer be able to access the
+children!
 But to do that requires that the children's children be deleted
 first, and so on.
 This is called a :term:`postorder traversal`.
@@ -192,3 +203,5 @@ Summary Questions
 .. avembed:: Exercises/Binary/TravSumm.html ka
    :long_name: Tree Traversal Summary Questions
    :keyword: Binary Tree Traversals
+
+

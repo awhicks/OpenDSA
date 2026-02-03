@@ -1,7 +1,18 @@
 /*global ODSA */
-"use strict";
 // Remove slideshow
+
+// Title: BST Remove Slideshow
+// Author: Cliff Shaffer
+// Institution: Virginia Tech
+// Features: Algorithm Visualization; Code Tracing Presentation
+// Keyword: Binary Search Tree
+// Natural Language: en
+// Programming Language: Java
+
+/* Description: Slideshow visualizing recursive remove value in a BST. */
+
 $(document).ready(function () {
+  "use strict";
   var av_name = "BSTremoveCON";
   var config = ODSA.UTILS.loadConfig({"av_name": av_name}),
       interpret = config.interpreter,       // get the interpreter
@@ -10,8 +21,8 @@ $(document).ready(function () {
   var pseudo = av.code(code[0]);
   var temp1;
 
-  var bstTop = 410;
-  var bt = av.ds.binarytree({visible: true, nodegap: 15, top: bstTop, left: 275});
+  var bstTop = 40;
+  var bt = av.ds.binarytree({visible: true, nodegap: 15, top: bstTop, left: 20});
   bt.root(37);
   var rt = bt.root();
   rt.left(24);
@@ -120,7 +131,7 @@ $(document).ready(function () {
   // Slide 17
   av.umsg("Unwind the recursion, and set the right pointer of the node with value of 24");
   var temp = rt.left().edgeToRight();
-  temp.addClass("rededge");
+  temp.addClass("emphasizeedge");
   rt.left().removeClass("processing");
   rt1.target(rt.left(), {anchor: "left top"});
   pseudo.setCurrentLine("visitright");
@@ -134,7 +145,7 @@ $(document).ready(function () {
   // Slide 19
   av.umsg("Unwind the recursion, and set the left pointer of the node with value of 37");
   temp1 = rt.edgeToLeft();
-  temp1.addClass("rededge");
+  temp1.addClass("emphasizeedge");
   rt.removeClass("processing");
   rt1.target(rt);
   pseudo.setCurrentLine("visitleft");
@@ -147,7 +158,7 @@ $(document).ready(function () {
   
   // Slide 21
   av.umsg("Now we return from the initial call to removehelp, setting the root of the tree to the result");
-  rt1.arrow.addClass("thinredline");
+  rt1.arrow.addClass("emphasizepointer");
   // This line should not be needed, but it is here to fix Raphael bug with arrows
   rt1.arrow.css({"stroke": "red"});
   pseudo.setCurrentLine("end");
@@ -157,11 +168,11 @@ $(document).ready(function () {
   av.umsg("Now let's try something a little bit harder. We will see what happens when we remove 32. We won't show all of the details of direction tests and the multiple recursive calls this time.");
   pseudo.setCurrentLine("sig");
   pseudo.unhighlight("end");
-  rt1.arrow.removeClass("thinredline");
+  rt1.arrow.removeClass("emphasizepointer");
   // This line should not be needed, but it is here to fix Raphael bug with arrows
   rt1.arrow.css({"stroke": "black"});
-  temp.removeClass("rededge");
-  temp1.removeClass("rededge");
+  temp.removeClass("emphasizeedge");
+  temp1.removeClass("emphasizeedge");
   rt.left().right().left(30);
   bt.layout();
   av.step();
@@ -207,7 +218,7 @@ $(document).ready(function () {
   rt.left().right(rt.left().right().left());
   temp = rt.left().edgeToRight();
   pseudo.setCurrentLine("visitright");
-  temp.addClass("rededge");
+  temp.addClass("emphasizeedge");
   bt.layout();
   av.step();
 
@@ -219,7 +230,7 @@ $(document).ready(function () {
   // Slide 31
   av.umsg("Unwind the recursion, and set the left pointer of the node with value of 37");
   temp1 = rt.edgeToLeft();
-  temp1.addClass("rededge");
+  temp1.addClass("emphasizeedge");
   rt.removeClass("processing");
   rt1.target(rt);
   pseudo.setCurrentLine("visitleft");
@@ -232,7 +243,7 @@ $(document).ready(function () {
   
   // Slide 33
   av.umsg("Now we return from the initial call to removehelp, setting the root of the tree to the result");
-  rt1.arrow.addClass("thinredline");
+  rt1.arrow.addClass("emphasizepointer");
   // This line should not be needed, but it is here to fix Raphael bug with arrows
   rt1.arrow.css({"stroke": "red"});
   pseudo.setCurrentLine("end");
@@ -242,11 +253,11 @@ $(document).ready(function () {
   av.umsg("Finally, let's see what happens when we delete the root node.");
   pseudo.unhighlight("end");
   pseudo.setCurrentLine("sig");
-  rt1.arrow.removeClass("thinredline");
+  rt1.arrow.removeClass("emphasizepointer");
   // This line should not be needed, but it is here to fix Raphael bug with arrows
   rt1.arrow.css({"stroke": "black"});
-  temp.removeClass("rededge");
-  temp1.removeClass("rededge");
+  temp.removeClass("emphasizeedge");
+  temp1.removeClass("emphasizeedge");
   rt.left().right().left(30);
   rt.left().right().value(32);
   bt.layout();
@@ -299,7 +310,7 @@ $(document).ready(function () {
   av.umsg("Now set the root value to what was returned by getmax.");
   pseudo.setCurrentLine("setelement");
   av.effects.moveValue(tnode, rt);
-  rt.addClass("rednode");
+  rt.addClass("emphasizenode");
   av.step();
 
   // Slide 44
@@ -307,9 +318,9 @@ $(document).ready(function () {
   pseudo.setCurrentLine("setleft");
   rt.left().right(rt.left().right().left());
   temp = rt.left().edgeToRight();
-  temp.addClass("rededge");
+  temp.addClass("emphsizeedge");
   temp1 = rt.edgeToLeft();
-  temp1.addClass("rededge");
+  temp1.addClass("emphasizeedge");
   rt2.hide();
   bt.layout();
   av.step();

@@ -268,3 +268,5 @@ As a final test of your proficiency in doing beta reductions, try doing
 2. All the steps in a complete normal order reduction
 
 .. avembed:: AV/Development/BetaNormPro.html pe
+
+

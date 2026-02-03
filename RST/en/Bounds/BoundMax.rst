@@ -10,7 +10,7 @@
    :requires:
    :satisfies:
    :topic: Lower Bounds
-   :keyword: Lower Bounds Proofs; Maximium Value
+   :keyword: Lower Bound Proof; Maximium Value Problem
    :naturallanguage: en
    :programminglanguage: N/A
    :description: Introduces the concept of finding the lower bound for a problem using the Finding the Maximium problem as an example.
@@ -150,3 +150,5 @@ Acknowledgement
 
 This page borrows heavily from  presentation in Section 3.2 of
 *Compared to What?* by Gregory J.E. Rawlins.
+
+

@@ -60,7 +60,8 @@
       "enable_scrolling": true
     }, 
     "points": 1.0,
-    "partial_credit": false
+    "frame_width": 1000,
+    "frame_height": 900    
   }, 
   "glob_pe_options": {
     "threshold": 0.9, 
@@ -99,9 +100,9 @@
       "Tutorials/junitstart": {}, 
       "Tutorials/junitbasic": {}, 
       "Tutorials/junitcoverage": {},
-      "Tutorials/mutationtesting": {},
-      "Tutorials/mutationtesting_example": {},
-      "Tutorials/mutationtesting_faq": {},
+      "Tutorials/MTeclipse": {},
+      "Tutorials/MTbasics": {},
+      "Tutorials/MTadvanced": {},
       "Testing/TriangleIntro": {},
       "Testing/TriangleCoverage": {},
       "Testing/BowlingIntro": {},
@@ -593,6 +594,7 @@
       }
     }, 
     "Advanced Data Structures": {
+      "SearchStruct/Sparse": {},
       "SearchStruct/SkipList": {},
       "Spatial/Spatial": {}, 
       "Spatial/PRquadtree": {}, 

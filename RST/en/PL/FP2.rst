@@ -4,11 +4,16 @@
 .. distributed under an MIT open source license.
 
 .. avmetadata:: 
-   :author: David Furcy and Tom Naps
+   :title: Developing Basic, Recursive List-processing Functions
+   :author: David Furcy; Tom Naps
+   :institution: UW-Oshkosh
+   :keyword: Functional Programming
+   :naturallanguage: en
+   :programminglanguage: N/A
+   :description: Introduces basic concepts for list processing in a functional programming language.
 
-==============================================================================
 Developing Basic, Recursive List-processing Functions 
-==============================================================================
+======================================================
 
    
 Recursive List Processing Example: sum( list )
@@ -184,3 +189,5 @@ Now that we have established the correct logic for this function, consider the f
 
 .. avembed:: Exercises/PL/RecListProc3.html ka
    :long_name: Recursion on Flat Lists 3
+
+

@@ -10,7 +10,7 @@
    :satisfies: algorithm analysis lower bound
    :requires: growth rate; best and worst case
    :topic: Algorithm Analysis
-   :keyword: Algorithm Analysis; Asymptotic Algorithm Analysis; Lower Bound; Big Theta; Big Omega
+   :keyword: Algorithm Analysis; Lower Bound; Big Theta; Big Omega
    :naturallanguage: en
    :programminglanguage: N/A
    :description: An introduction to lower bounds analysis, Omega, and Theta notation.
@@ -255,3 +255,5 @@ Summary Exercise
    :long_name: Lower Bounds and Theta Notation Exercise
    :keyword: Algorithm Analysis; Asymptotic Algorithm Analysis; Lower
            Bound; Big Theta; Big Omega
+
+

@@ -59,3 +59,5 @@ Animation on comparing variables
 
 .. extrtoolembed:: 'ae_adl_comparison'
    :learning_tool: mastery-grid-python-animations
+
+

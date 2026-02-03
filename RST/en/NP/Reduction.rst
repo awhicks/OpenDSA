@@ -4,10 +4,14 @@
 .. distributed under an MIT open source license.
 
 .. avmetadata::
+   :title: Reductions
    :author: Cliff Shaffer
+   :institution: Virginia Tech
    :topic: Reductions
-   :keyword: Reductions
-
+   :keyword: Reduction
+   :naturallanguage: en
+   :programminglanguage: N/A
+   :description: Introduces the concept of a reduction. Demonstrates the two-sided relationship between two problems: One side relates upper bounds, the other relates lower bounds. Presents a visual representation for the reduction process. This is important prepatory material for later introducing NP-completeness theory.
 
 Reductions
 ==========
@@ -481,3 +485,5 @@ the only simple polygon having all of its points on :math:`C` as
 vertices is the convex one.
 Therefore, by the Lower Bound Theorem, **SIMPLE POLYGON** is in
 :math:`\Omega(n \log n)`.
+
+

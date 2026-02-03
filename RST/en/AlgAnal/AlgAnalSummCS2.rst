@@ -4,7 +4,7 @@
 .. distributed under an MIT open source license.
 
 .. avmetadata::
-   :title: Algorithm Analysis Summary Exercises
+   :title: Algorithm Analysis Summary Exercises: CS2
    :author: Cliff Shaffer
    :institution: Virginia Tech
    :requires: algorithm analysis; analyzing programs
@@ -25,3 +25,5 @@ Summary Exercise: CS2
 .. avembed:: Exercises/AlgAnal/AlgAnalCS2Summ.html ka
    :long_name: Algorithm Analysis Summary Questions
    :keyword: Algorithm Analysis
+
+

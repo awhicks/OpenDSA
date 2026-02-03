@@ -4,10 +4,14 @@
 .. distributed under an MIT open source license.
 
 .. avmetadata::
+   :title: The Independent Set Problem
    :author: Nabanita Maji
+   :institution: Virginia Tech
    :topic: NP-completeness
-   :keyword: NP-completeness; Independent Set Problem
-
+   :keyword: NP-Complete; Independent Set Problem
+   :naturallanguage: en
+   :programminglanguage: N/A
+   :description: Presents the Independent Set problem. Includes a practice exercise where the user must determine the maximum indpendent set in a given graph.
 
 The Independent Set Problem
 ===========================
@@ -27,3 +31,5 @@ Try out an instance of the Independent Set problem on your own.
 .. avembed:: Exercises/NP/independentSetPRO.html ka
    :long_name: Practice Exercise for Independent Set
    :keyword: NP-completeness; Independent Set Problem
+
+

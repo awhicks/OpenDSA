@@ -12,7 +12,7 @@
    :topic: Sorting
    :keyword: Sorting; Bubble Sort
    :naturallanguage: en
-   :programminglanguage: Java; CPP
+   :programminglanguage: Java; C++
    :description: Presentation of Bubble Sort including visualizations, code, and self-test questions and exercises
 
 .. index:: ! Bubble Sort
@@ -127,3 +127,5 @@ Bubble Sort.
 .. avembed:: Exercises/Sorting/BubsortSumm.html ka
    :long_name: Bubble Sort Summary Exercise
    :keyword: Sorting; Bubble Sort
+
+

@@ -10,7 +10,7 @@
    :requires:
    :satisfies: Web-CAT Plugin
    :topic: Programming Tutorial
-   :keyword: Web-CAT; Eclipse
+   :keyword: Web-CAT; Eclipse IDE
    :naturallanguage: en
    :programminglanguage: N/A
    :description: Describes how to install the Web-CAT submission plugin in the Eclipse IDE.
@@ -44,6 +44,8 @@ then you can check for updates at ``Help --> Check for Updates``.
 
 **Note:** Eclipse requires JRE 21 or later to install, but we will
 **NOT** be using JRE 21 for projects.
+So the next step is to install a version of Java that Web-CAT can
+use.
 
 
 Installing Java 11
@@ -103,6 +105,23 @@ Select the JDK you just added and click on the ``Default`` button.
 This will set the JDK you just added as the default JRE for
 Eclipse. Hit ``Apply and Close`` to close the Preferences window.
 
+Setting the Compiler Compliance Level
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Once you have set the default JRE, you will need to set the default
+compiler compliance level to Java 11. To do this, in the Preferences
+window, click on ``Java --> Compiler`` and the first line will be
+``Compiler compliance level``. Set this to ``11``. You should see
+a window like this:
+
+.. odsafig:: Images/CompilerCompliance.png
+   :width: 650
+   :align: center
+   :capalign: justify
+   :figwidth: 90%
+   :alt: CompilerCompliance
+
+Click on ``Apply and Close`` to close the Preferences window.
 
 Installing the Plug-in
 ----------------------
@@ -241,10 +260,9 @@ Put in the following information:
 
 * You can leave Outgoing SMTP Mail Server blank.
 
-* In the ``Download URL`` field, enter:
-  https://courses.cs.vt.edu/cs3114/Summer25/assignments.xml
-.. TODO: This URL changes with each semester and is VT specific.
-..   http://web-cat.cs.vt.edu/Web-CAT/assignments.xml
+* In the ``Download URL`` field, enter the URL for your semester. So
+  if you are taking the class in Spring 2026, you would use this URL:
+  https://courses.cs.vt.edu/cs3114/Spring26/assignments.xml
 
 * Click on ``Apply and Close`` to complete the process.
 
@@ -254,6 +272,13 @@ Installing student.jar
 
 If you are using Web-CAT, then you probably will want to use the VT
 local support for JUnit tests.
+For many courses, you will be given "starter code" in the form of a
+project that you can drop into Eclipse, and that already contains the
+student.jar file in the project library folder along with the proper
+classpath information.
+But in case you want to create your own Eclipse project and add the
+student.jar (or any other library in the form of a .jar file),
+here is the process.
 
 First, download the |studentjar| file.
 
@@ -304,7 +329,7 @@ Installing formatting support
 
 You might want to make sure that your Eclipse style checker is as
 close as possible to the style guide that Web-CAT is enforcing.
-To do this, you can install three configuration files for tools
+To do this, you can install configuration files for tools
 that are used by Web-CAT.
 
 Eclipse Formatter
@@ -349,7 +374,9 @@ Then install it into Eclipse, as described below.
    <a href="https://courses.cs.vt.edu/cs3114/checkstyle.xml" target =
    "_blank">checkstyle.xml</a>
 
-Once it is installed, right click on a file, or on the default package to
+Once it is installed, right click on the project folder, and select
+``Checkstyle --> Activate Checkstyle``.
+Alternatively, right click on a file, or on the default package to
 check your entire project, and select
 ``Checkstyle --> Check Code with Checkstyle``.
 If necessary, you can also right click on a file, or on the default package, to
@@ -379,3 +406,5 @@ and click ``Set as Default``. Finally, click ``Apply and Close``.
    :align: center
    :capalign: justify
    :figwidth: 90%
+
+

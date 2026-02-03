@@ -8,11 +8,10 @@
    :author: Cliff Shaffer
    :institution: Virginia Tech
    :topic: NP-completeness
-   :keyword: NP-completeness
+   :keyword: NP-Complete
    :naturallanguage: en
    :programminglanguage: N/A
    :description: An initial introduction to the concept of NP-completeness, including definitions for NP, NP-hard, and NP-complete. Introduces some example problems, including Traveling Salesman and Clique.
-
 
 NP-Completeness
 ===============
@@ -359,3 +358,5 @@ Conversely, if we were able to prove that **TRAVELING SALESMAN** has an
 exponential time lower bound, then we would know that
 :math:`P \neq NP`, and that no NP-complete problem can be
 solved in polynomial time.
+
+

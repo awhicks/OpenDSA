@@ -4,12 +4,16 @@
 .. distributed under an MIT open source license.
 
 .. avmetadata:: 
+   :title: Implementing a Linked Stack
    :author: Cliff Shaffer
+   :institution: Virginia Tech
    :requires: stack ADT
    :satisfies: linked stack
    :topic: Lists
-   :keyword: Linked Stack Implementation
-
+   :keyword: Linked Stack
+   :naturallanguage: en
+   :programminglanguage: Java
+   :description: Presents an implementation for linked stacks.
 
 Linked Stacks
 =============
@@ -101,3 +105,5 @@ in the middle of the array will be exhausted quickly.
    :scripts: AV/List/llist.js AV/List/lstackTwostackCON.js
    :align: center
    :keyword: Linked Stack Implementation
+
+

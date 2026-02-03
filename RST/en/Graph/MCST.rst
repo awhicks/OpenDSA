@@ -4,12 +4,16 @@
 .. distributed under an MIT open source license.
 
 .. avmetadata::
+   :title: Minimal Cost Spanning Trees
    :author: Cliff Shaffer
+   :institution: Virginia Tech
    :satisfies: Prim's algorithm; MCST
    :requires: graph shortest path
    :topic: Graphs
-   :keyword: Graphs; Minimal-Cost Spanning Trees
-
+   :keyword: Graph; Minimal-Cost Spanning Tree
+   :naturallanguage: en
+   :programminglanguage: N/A
+   :description: Introduces the concept of minimal-cost spanning trees, and presents Prim's algorithm for constructing them.
 
 Minimal Cost Spanning Trees
 ===========================
@@ -43,7 +47,7 @@ Figure :num:`Figure #MCSTdgm` shows the MCST for an example graph.
 .. _MCSTdgm:
 
 .. inlineav:: MCSTCON dgm
-   :links:
+   :links: AV/Graph/MCSTCON.css
    :scripts: AV/Graph/MCSTCON.js
    :align: justify
    :keyword: Graphs; Minimal-Cost Spanning Trees
@@ -217,3 +221,5 @@ cost?
    :type: Exercise
 
    Proficiency exercise for Prim's algorithm.
+
+

@@ -9,7 +9,7 @@
    :institution: Duke University; Virginia Tech
    :satisfies: FLA Introduction
    :topic: Formal Languages Major Concepts
-   :keyword: Formal Languages and Automata; Grammars
+   :keyword: Formal Language; Automata; Grammar
    :naturallanguage: en
    :programminglanguage: N/A
    :description: Introduction to the major concepts covered in a course on formal languages and automata.
@@ -114,3 +114,5 @@ square, and maybe have a choice of whether to move right or left.
    This one accepts any string made of 1's and 0's that ends in 0
    (in other words, any even binary number).
    Can you figure out how it does that?
+
+

@@ -1,6 +1,14 @@
-"use strict";
+// Title: Kruskal's Minimal-Cost Spanning Tree Algorithm slideshow
+// Author: Ivan Wong; Cliff Shaffer
+// Institution: Virginia Tech
+// Features: Algorithm Visualization
+// Keyword: Minimal-Cost Spanning Tree
+// Natural Language: en
+// Programming Language: N/A
+/* Description: Slideshow demonstrating Kruskal's algorithm for constructing the minimal cost spanning tree for a graph. */
 
 $(document).ready(function () {
+  "use strict";
   var jsav = new JSAV("kruskalCON");
   var graph;
   var mst;   //A graph representing the resulted MST
@@ -15,8 +23,8 @@ $(document).ready(function () {
   var arr;     //Used to initialize the distance and labels arrays.
 
   var i;
-  graph = jsav.ds.graph({width: 600, height: 400, left: 250, layout: "manual", directed: false});
-  mst = jsav.ds.graph({width: 600, height: 400, left: 250, layout: "manual", directed: false});
+  graph = jsav.ds.graph({width: 600, height: 300, left: 250, layout: "manual", directed: false});
+  mst = jsav.ds.graph({width: 600, height: 300, left: 250, layout: "manual", directed: false});
   mst.hide();
   initGraph();
   initTree();

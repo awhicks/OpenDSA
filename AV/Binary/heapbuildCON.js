@@ -1,5 +1,16 @@
 /*global ODSA */
 // Heapbuild slideshow
+
+// Title: Heap Build Slideshow
+// Author: Cliff Shaffer
+// Institution: Virginia Tech
+// Features: Algorithm Visualization; Code Tracing Presentation
+// Keyword: Heap
+// Natural Language: en
+// Programming Language: Java
+
+/* Description: Slideshow visualizing the efficient heap buiding algorithm. */
+
 $(document).ready(function() {
   "use strict";
   var unsortArray = [1, 2, 3, 4, 5, 6, 7];

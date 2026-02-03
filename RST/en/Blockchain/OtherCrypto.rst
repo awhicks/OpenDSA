@@ -14,3 +14,5 @@ Other Cyptocurrencies
 
 a) Algorand (proof of stake)
 b) Others
+
+

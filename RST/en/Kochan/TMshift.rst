@@ -17,3 +17,5 @@ Visualization of Shift Machine
    :links: AV/Kochan/TMshift.css
    :scripts: AV/Kochan/TMshift.js AV/Juwon/FAcopy.js DataStructures/PIFrames.js
    :output: show
+
+

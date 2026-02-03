@@ -57,6 +57,9 @@
     "Preface": {
       "Intro": {}
     },
+    "Introduction": {
+      "Development/splice_codecheck": {}
+    },
     "Programming Tutorials": {
       "Tutorials/cmdline": {}, 
       "Tutorials/parameters": {}, 
@@ -69,9 +72,9 @@
       "Tutorials/junitstart": {}, 
       "Tutorials/junitbasic": {}, 
       "Tutorials/junitcoverage": {},
-      "Tutorials/mutationtesting": {},
-      "Tutorials/mutationtesting_example": {},
-      "Tutorials/mutationtesting_faq": {},
+      "Tutorials/MTeclipse": {},
+      "Tutorials/MTbasics": {},
+      "Tutorials/MTfaq": {},
       "Tutorials/testvalidation": {},
       "Testing/TestIntro": {},
       "Testing/TestCoverage": {},

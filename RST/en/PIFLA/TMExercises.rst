@@ -4,12 +4,16 @@
 .. distributed under an MIT open source license.
 
 .. avmetadata::
+   :title: Turing Machine Exercises
    :author: Mostafa Mohammed
+   :institution: Virginia Tech
    :requires:
    :satisfies:
    :topic: Turing Machines Exercises
-   :keyword: Turing Machines
-
+   :keyword: Turing Machine
+   :naturallanguage: en
+   :programminglanguage: N/A
+   :description: A collection of exercises that require the user to create a Turing machine, with correctness assessed using test case.
 
 Turing Machine Exercises
 ========================
@@ -85,3 +89,5 @@ Exercise 9
 .. avembed:: AV/OpenFLAP/exercises/FLAssignments/TMexercise/abPalindromes.html pe
    :long_name: Turing Machines Exercise
    :keyword: Turing Machines
+
+

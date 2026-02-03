@@ -9,7 +9,7 @@
    :institution: Virginia Tech
    :satisfies: About
    :topic: Tour
-   :keyword: Command Line; File System; Path
+   :keyword: Command Line; File System
    :naturallanguage: en
    :programminglanguage: N/A
    :description: Introduction to the command line, navigating directories in a file system, and manipulating pathnames.
@@ -173,4 +173,6 @@ The following commands are currently supported. Arguments are surrounded by (par
 **mv (src_path) (dst_path)**: Move the file or directory from the location specified by (src_path) to the file or directory specified by (dst_path). Provide multiple (src_path) values separated by space characters to move multiple files or directories.
 
 **cp [-r] (src_path) (dst_path)**: Copy the file or directory from the location specified by (src_path) to the file or directory specified by (dst_path). Provide multiple (src_path) values separated by space characters to copy multiple files or directories. Provide the [-r] flag to copy directories.
+
+
 

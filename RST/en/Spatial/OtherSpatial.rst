@@ -10,7 +10,7 @@
    :requires: Spatial data structures; PRquadtree; KD tree; Bintree
    :satisfies: PRquadtree
    :topic: Spatial Data Structures
-   :keyword: Spatial Data Structures
+   :keyword: Spatial Data Structure
    :naturallanguage: en
    :programminglanguage: N/A
    :description: Introduction to the Point Quadtree data structure and related concepts.
@@ -101,3 +101,5 @@ have to do with adapting them for disk-based applications.
 However, all such disk-based implementations boil down to storing the
 spatial data structure within some variant
 on either :term:`B-trees <B-tree>` or :term:`hashing`.
+
+

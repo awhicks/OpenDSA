@@ -10,7 +10,7 @@
    :requires: FL Introduction
    :satisfies:
    :topic: Introduction
-   :keyword: Formal Languages and Automata; Grammars
+   :keyword: Formal Language; Grammar; Automata
    :naturallanguage: en
    :programminglanguage: N/A
    :description: Course overview for a course on formal languages and automata.
@@ -203,3 +203,5 @@ Turing machines can do anything
 
 And, how can it be true that you can't always tell if a loop will
 halt?!
+
+

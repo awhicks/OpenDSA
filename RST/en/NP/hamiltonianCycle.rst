@@ -4,10 +4,14 @@
 .. distributed under an MIT open source license.
 
 .. avmetadata::
+   :title: The Hamiltonian Cycle Problem
    :author: Nabanita Maji
+   :institution: Virginia Tech
    :topic: NP-completeness
-   :keyword: NP-completeness; Hamiltonian Cycle Problem
-
+   :keyword: NP-Complete; Hamiltonian Cycle Problem
+   :naturallanguage: en
+   :programminglanguage: N/A
+   :description: Presents the Hamiltonian Cycle problem. Includes a practice exercise where the user must show if there is a Hamiltonian Cycle for a given graph.
 
 The Hamiltonian Cycle Problem
 =============================
@@ -27,3 +31,5 @@ Try out an instance of the Hamiltonian Cycle problem on your own.
 .. avembed:: Exercises/NP/hamiltonianCycPRO.html ka
    :long_name: Practice Exercise for Hamiltonian Cycle
    :keyword: NP-completeness; Hamiltonian Cycle Problem
+
+

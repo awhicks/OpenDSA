@@ -33,3 +33,5 @@ Example of database applications
    :output: show
 
 .. odsafig:: Images/ternaryCardinalityMappingPhoto.png
+
+

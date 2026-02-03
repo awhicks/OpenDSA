@@ -7,7 +7,7 @@
    :title: Aggregation, Strings and More Loops
    :author: Molly Domino
    :institution: Virginia Tech
-   :keyword: Aggregation; Composition; Strings; Loops
+   :keyword: Aggregation; Composition; String; Loop
    :naturallanguage: en
    :programminglanguage: Java
    :description: First semester programming course introduction to aggregation, strings, and more advanced loop control statements.
@@ -1076,3 +1076,5 @@ Programming Practice 7b
      <a href="https://greenteapress.com/wp/think-java-2e/">Think Java: How to Think Like a Computer Scientist</a> version 6.1.3 by Allen B. Downey and Chris Mayfield,
      licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License (CC BY-NC-SA 4.0).
    </div></footer>
+
+

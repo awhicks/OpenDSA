@@ -8,7 +8,7 @@
    :author: Cliff Shaffer
    :institution: Virginia Tech
    :topic: Randomized Algorithms
-   :keyword: Skip Lists; Randomized Algorithms; Probabilistic Algorithms
+   :keyword: Skip List; Randomized Algorithm; Probabilistic Algorithm
    :naturallanguage: en
    :programminglanguage: Java
    :description: Presentation of the Skip List data structure including visualizations and code.
@@ -196,3 +196,5 @@ worst case (in this case, :math:`\Theta(n)` for a skip list
 operation), and a rapidly increasing probability of average-case
 performance of :math:`\Theta(\log n)`, that characterizes
 probabilistic data structures.
+
+

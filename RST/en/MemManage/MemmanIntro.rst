@@ -4,10 +4,14 @@
 .. distributed under an MIT open source license.
 
 .. avmetadata::
+   :title: Chapter Introduction: Memory Management
    :author: Cliff Shaffer
+   :institution: Virginia Tech
    :topic: Memory Management
    :keyword: Memory Management
-
+   :naturallanguage: en
+   :programminglanguage: N/A
+   :description: Introduction to a chapter on  memory management. Presents a simple ADT as a basis for discussion.
 
 Chapter Introduction: Memory Management
 =======================================
@@ -105,3 +109,5 @@ In the rest of this chapter, we first study techniques for dynamic
 memory management.
 We then tackle the issue of what to do when no single block
 of memory in the memory pool is large enough to honor a given request.
+
+

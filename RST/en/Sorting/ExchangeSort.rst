@@ -6,12 +6,13 @@
 .. avmetadata::
    :title: The Cost of Exchange Sorting
    :author: Cliff Shaffer
+   :institution: Virginia Tech
    :requires: insertion sort; bubble sort; selection sort
    :satisfies: exchange sort
    :topic: Sorting
-   :keyword: Sorting; Exchange Sorting; N-squared Sorts
+   :keyword: Exchange Sort; N-squared Sorts
    :naturallanguage: en
-   :programminglanguage: Java; CPP
+   :programminglanguage: Java; C++
    :description: Lower bounds analysis for any sorting algorithm that works by swapping adjacent records.
 
 .. index:: ! exchange sorting
@@ -92,3 +93,5 @@ Analysis
 .. avembed:: Exercises/Sorting/ExchangeSumm.html ka
    :long_name: Exchange Sorting Summary Exercise
    :keyword: Sorting; Exchange Sorting; O(n^2) Sorts
+
+

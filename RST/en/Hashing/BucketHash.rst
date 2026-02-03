@@ -4,12 +4,16 @@
 .. distributed under an MIT open source license.
 
 .. avmetadata::
+   :title: Bucket Hashing
    :author: Cliff Shaffer
+   :institution: Virginia Tech
    :requires: open hashing
    :satisfies: bucket hashing
    :topic: Hashing
-   :keyword: Hashing; Bucket Hashing
-
+   :keyword: Bucket Hashing
+   :naturallanguage: en
+   :programminglanguage: N/A
+   :description: Introduction to the concept of bucket hashing, with visualizations and practice exercises.
 
 Bucket Hashing
 ==============
@@ -106,3 +110,5 @@ accesses.
 .. avembed:: Exercises/Hashing/HashBucket2PRO.html ka
    :long_name: Alternate Bucket Hashing Proficiency Exercise
    :keyword: Hashing; Bucket Hashing
+
+

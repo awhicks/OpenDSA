@@ -4,11 +4,15 @@
 .. distributed under an MIT open source license.
 
 .. avmetadata::
-   :author: Mostafa Mohammed and Cliff Shaffer
+   :title: Transforming Grammars
+   :author: Mostafa Mohammed; Cliff Shaffer
+   :institution: Virginia Tech
    :satisfies:
    :topic: Context-Free Grammar Transformations
-   :keyword: Context-Free Grammar Transformations
-
+   :keyword: Context-Free Grammar
+   :naturallanguage: en
+   :programminglanguage: N/A
+   :description: Rules for transforming CFGs to simplify them.
 
 Transforming Grammars
 =====================
@@ -100,3 +104,5 @@ Greibach Normal Form (GNF)
    :scripts: DataStructures/FLA/GrammarMatrix.js DataStructures/PIFrames.js AV/PIFLA/CFL/GreibachNormalFormFS.js
    :output: show
    :keyword: Context-Free Grammar Transformations
+
+

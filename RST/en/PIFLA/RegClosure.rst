@@ -4,12 +4,16 @@
 .. distributed under an MIT open source license.
 
 .. avmetadata::
-   :author: Susan Rodger, Mostafa Mohammed and Cliff Shaffer
+   :title: Closure Properties of Regular Grammars
+   :author: Susan Rodger; Mostafa Mohammed; Cliff Shaffer
+   :institution: Duke University; Virginia Tech
+   :requires:
    :satisfies: Closure Properties of Regular Grammars
-   :requires: Regular Grammars
-   :topic: Regular languages
-   :keyword: Regular Languages; Closure Properties
-
+   :topic: Finite Automata
+   :keyword: Regular Language; Closure Property
+   :naturallanguage: en
+   :programminglanguage: N/A
+   :description: Presents a number of closure properties for regular languages.
 
 Closure Properties of Regular Languages
 =======================================
@@ -137,3 +141,5 @@ way to always be able to prove whether a language is regular or not.
 We simply have tools that sometimes let us prove that the language is
 regular (typically by constructing one of the representations already
 described) or that let us prove the language is not regular.
+
+

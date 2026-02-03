@@ -10,7 +10,7 @@
    :requires: algorithm analysis
    :satisfies: analysis misunderstandings
    :topic: Algorithm Analysis
-   :keyword: Algorithm Analysis; Misconceptions
+   :keyword: Algorithm Analysis; Misconception
    :naturallanguage: en
    :programminglanguage: N/A
    :description: Explains some common student misunderstandings about asymptotic algorithm analysis.
@@ -108,3 +108,5 @@ worst, and average cases as the input size grows.
 .. avembed:: Exercises/AlgAnal/MisSumm.html ka
    :long_name: Common Misconceptions Exercise
    :keyword: Algorithm Analysis; Algorithm Analysis Misconceptions
+
+

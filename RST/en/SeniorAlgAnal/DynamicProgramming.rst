@@ -10,7 +10,7 @@
    :topic: Dynamic Programming
    :keyword: Dynamic Programming; Recursion; Fibonacci Sequence; Knapsack Problem
    :naturallanguage: en
-   :programminglanguage: Java; CPP
+   :programminglanguage: Java
    :description: Introduction to dynamic programming.
 
 
@@ -560,3 +560,5 @@ Now, when we need to compute a series of matrices from :math:`i` to
 :math:`j`, we just look in position :math:`[i, j]` in the table. If
 there is an answer there, we use it.
 Otherwise, we do the computation, and note it in the table.
+
+

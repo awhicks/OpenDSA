@@ -10,7 +10,7 @@
    :requires: debugging
    :satisfies: Eclipse debugging
    :topic: Programming Tutorial
-   :keyword: Debugging; Source Level Debugging; Eclipse
+   :keyword: Debugging; Source Level Debugging; Eclipse IDE
    :naturallanguage: en
    :programminglanguage: Java
    :description: Introduction to using the Eclipse source-level debugger.
@@ -248,3 +248,5 @@ check out |external_link3|.
 .. |external_link3| raw:: html
 
    <a href="https://wiki.eclipse.org/FAQ_How_do_I_set_a_conditional_breakpoint%3F" target = "_blank">Eclipse's official documentation</a>
+
+

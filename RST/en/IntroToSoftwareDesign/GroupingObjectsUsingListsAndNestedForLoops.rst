@@ -7,7 +7,7 @@
    :title: Grouping Objects Using Lists and Nested For Loops
    :author: Molly Domino
    :institution: Virginia Tech
-   :keyword: Lists; Sets; Maps; For Loops; Interfaces
+   :keyword: List; Set; Map; For Loop; Interface
    :naturallanguage: en
    :programminglanguage: Java
    :description: First semester programming course introduction to using lists to group objects.
@@ -662,3 +662,5 @@ Programming Practice 8b
      <a href="https://greenteapress.com/wp/think-java-2e/">Think Java: How to Think Like a Computer Scientist</a> version 6.1.3 by Allen B. Downey and Chris Mayfield,
      licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License (CC BY-NC-SA 4.0).
    </div></footer>
+
+

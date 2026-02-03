@@ -4,11 +4,16 @@
 .. distributed under an MIT open source license.
 
 .. avmetadata::
+   :title: Implementing the Array-Based Queue
    :author: Cliff Shaffer
+   :institution: Virginia Tech
    :requires: list ADT
    :satisfies: queue; array-based queue
    :topic: Lists
-   :keyword: Queues; Array-based Queue Implementation
+   :keyword: Array-Based Queue
+   :naturallanguage: en
+   :programminglanguage: Java
+   :description: Presents an implementation for array-based queues.
 
 
 Queues
@@ -151,3 +156,5 @@ Array-based Dequeue Practice
 .. avembed:: Exercises/List/AqueueDequeuePRO.html ka
    :long_name: Array-based Queue Dequeue Exercise
    :keyword: Array-based Queues
+
+

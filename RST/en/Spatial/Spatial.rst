@@ -10,7 +10,7 @@
    :requires:
    :satisfies: Spatial data structures
    :topic: Spatial Data Structures
-   :keyword: Spatial Data Structures
+   :keyword: Spatial Data Structure
    :naturallanguage: en
    :programminglanguage: N/A
    :description: Introduction to the concepts of spatial data structures.
@@ -95,3 +95,5 @@ Two other variations on these data structures are the
 In two dimensions, these four structures cover all four combinations
 of object- versus key-space decomposition on the one hand, and
 multi-level binary versus :math:`2^d`-way branching on the other.
+
+

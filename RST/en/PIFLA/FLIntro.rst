@@ -10,7 +10,7 @@
    :requires:
    :satisfies: FL Introduction
    :topic: Introduction
-   :keyword: Formal Languages and Automata
+   :keyword: Formal Language; Automata
    :naturallanguage: en
    :programminglanguage: N/A
    :description: Introductory module for a course on formal languages and automata.
@@ -317,3 +317,5 @@ the following.
   and a :term:`Turing Machine <Turing machine>`?
   For any pair of these, are there problems that one can solve that
   the other cannot?
+
+

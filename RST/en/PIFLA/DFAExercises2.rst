@@ -4,12 +4,16 @@
 .. distributed under an MIT open source license.
 
 .. avmetadata::
-   :author: Mostafa Mohammed, Cliff Shaffer
+   :title: DFA Exercises 2
+   :author: Mostafa Mohammed; Cliff Shaffer
+   :institution: Virginia Tech
    :requires:
    :satisfies:
    :topic: DFA exercises
-   :keyword: Finite Automata; Deterministic Finite Acceptor
-
+   :keyword: Deterministic Finite Automata
+   :naturallanguage: en
+   :programminglanguage: N/A
+   :description: A second collection of construction exercises for DFAs.
 
 DFA exercises
 =============
@@ -50,3 +54,5 @@ take into account the trap state.
 .. avembed:: AV/OpenFLAP/exercises/FLAssignments/FA/DFACOMPevenamin3b.html pe
    :long_name: Complement even a min 3 b
    :keyword: Finite Automata; Deterministic Finite Acceptor
+
+

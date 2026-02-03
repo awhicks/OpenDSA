@@ -4,10 +4,10 @@
 .. distributed under an MIT open source license.
 
 .. avmetadata::
-   :title: Arrays
+   :title: Multi-dimensional Arrays
    :author: Molly Domino
    :institution: Virginia Tech
-   :keyword: Multi-dimensional Arrays
+   :keyword: Array
    :naturallanguage: en
    :programminglanguage: Java
    :description: CS1-level introduction to multi-dimensional arrays.
@@ -467,3 +467,5 @@ Programming Practice: Mod
      <a href="https://greenteapress.com/wp/think-java-2e/">Think Java: How to Think Like a Computer Scientist</a> version 6.1.3 by Allen B. Downey and Chris Mayfield,
      licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License (CC BY-NC-SA 4.0).
    </div></footer>
+
+

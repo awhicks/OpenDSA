@@ -9,6 +9,7 @@
    :institution: Virginia Tech
    :requires: recursion writing
    :topic: Recursion
+   :keyword: Recursion
    :naturallanguage: en
    :programminglanguage: Java
    :description: Several simple recursion programming exercises.
@@ -34,3 +35,5 @@ Recursion Programming Exercise: Decimal to Binary
 
 .. extrtoolembed:: 'Recursion Programming Exercise: Decimal to Binary'
    :workout_id: 57
+
+

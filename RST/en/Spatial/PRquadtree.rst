@@ -9,7 +9,7 @@
    :institution: Virginia Tech
    :requires: Spatial data structures
    :satisfies: PRquadtree
-   :topic: Spatial Data Structures
+   :topic: Spatial Data Structure
    :keyword: Spatial Data Structures, PR Quadtree
    :naturallanguage: en
    :programminglanguage: N/A
@@ -232,3 +232,5 @@ Use of the composite design would be difficult if NULL pointers are
 used to represent empty leaf nodes.
 It turns out that the PR quadtree insert and delete methods are easier
 to implement when using the composite design.
+
+

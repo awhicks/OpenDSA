@@ -109,9 +109,9 @@
       "Tutorials/junitstart": {}, 
       "Tutorials/junitbasic": {}, 
       "Tutorials/junitcoverage": {},
-      "Tutorials/mutationtesting": {},
-      "Tutorials/mutationtesting_example": {},
-      "Tutorials/mutationtesting_faq": {},
+      "Tutorials/MTeclipse": {},
+      "Tutorials/MTbasics": {},
+      "Tutorials/MTadvanced": {},
       "Testing/TriangleIntro": {},
       "Testing/TriangleCoverage": {},
       "Testing/BowlingIntro": {},
@@ -220,7 +220,7 @@
           "threshold": 5
         }
       },
-      "PointersJava/Exercises": {}
+      "PointersJava/ExercisesPtr": {}
     }, 
     "Linear Structures": {
       "List/ListIntro": {}, 

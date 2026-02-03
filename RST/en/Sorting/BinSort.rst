@@ -4,14 +4,18 @@
 .. distributed under an MIT open source license.
 
 .. avmetadata::
+   :title: Binsort
    :author: Cliff Shaffer
+   :institution: Virginia Tech
    :requires: sorting terminology
    :satisfies: binsort
    :topic: Sorting
-   :keyword: Sorting; Binsort; Bucket Sort
+   :keyword: Binsort; Bucket Sort
+   :naturallanguage: en
+   :programminglanguage: Java
+   :description: Presentation of Binsort, including visualizations.
 
 .. index:: ! Binsort
-
 
 Binsort
 =======
@@ -129,3 +133,5 @@ only a small number of records into each bucket, and that a
 "cleanup sort" to each bucket will then be relatively cheap.
 This is similar in spirit to the Radix Sort, which extends the
 concept of the Binsort in a practical way.
+
+

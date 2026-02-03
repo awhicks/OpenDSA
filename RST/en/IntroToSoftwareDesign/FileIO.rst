@@ -7,7 +7,7 @@
    :title: Variable Scoping, Input, and Output 
    :author: Molly Domino
    :institution: Virginia Tech
-   :keyword: Variable Scope; File I/O; Scanner
+   :keyword: Variable Scope; File Processing; Scanner
    :naturallanguage: en
    :programminglanguage: Java
    :description: CS1-level introduction to variable scoping and file I/O.
@@ -1038,3 +1038,5 @@ Check Your Understanding: Testing
      <a href="https://greenteapress.com/wp/think-java-2e/">Think Java: How to Think Like a Computer Scientist</a> version 6.1.3 by Allen B. Downey and Chris Mayfield,
      licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License (CC BY-NC-SA 4.0).
    </div></footer>
+
+

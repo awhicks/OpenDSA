@@ -4,11 +4,16 @@
 .. distributed under an MIT open source license.
 
 .. avmetadata:: 
+   :title: Implementing the Linked Queue
    :author: Cliff Shaffer
+   :institution: Virginia Tech
    :requires: queue
    :satisfies: linked queue
    :topic: Lists
-   :keyword: Linked Queues
+   :keyword: Linked Queue
+   :naturallanguage: en
+   :programminglanguage: Java
+   :description: Presents an implementation for linked queues.
 
 
 Linked Queues
@@ -79,3 +84,5 @@ Stack and Queue Summary Questions
 .. avembed:: Exercises/List/StackQSumm.html ka
    :long_name: Stack/Queue Summary Exercise
    :keyword: Stacks; Queues
+
+

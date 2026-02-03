@@ -9,7 +9,7 @@
    :institution: Virginia Tech
    :satisfies: 2-3 tree
    :topic: Indexing
-   :keyword: Indexing; 2-3 Trees
+   :keyword: Indexing; 2-3 Tree
    :naturallanguage: en
    :programminglanguage: Java
    :description: Presents the 2-3 Tree Data Structure.
@@ -238,3 +238,5 @@ San Francisco as part of his |galles_AVs| package.
 .. |galles_AVs| raw:: html
 
    <a href="http://www.cs.usfca.edu/~galles/visualization/Algorithms.html" target="_blank">Data Structure Visualizations</a>
+
+

@@ -14,15 +14,7 @@ CSS_LINT = yarn csslint --quiet --ignore=ids,adjoining-classes
 # CSSOLDLINTFLAGS = --quiet --errors=empty-rules,import,errors --warnings=duplicate-background-images,compatible-vendor-prefixes,display-property-grouping,fallback-colors,duplicate-properties,shorthand,gradients,font-sizes,floats,overqualified-elements,import,regex-selectors,rules-count,unqualified-attributes,vendor-prefix,zero-units
 JSON_LINT = yarn jsonlint --quiet
 
-JS_MINIFY = yarn uglifyjs --comments '/^!|@preserve|@license|@cc_on/i' --
-CSS_MINIFY = yarn cleancss
-ifeq ($(strip $(ODSA_ENV)),DEV)
-	# fake-minify for easier debugging in DEV setups...
-	JS_MINIFY = cat
-	CSS_MINIFY = cat
-endif
-
-.PHONY: help clean min webserver
+.PHONY: help clean webserver
 
 help: ## This help dialog
 	@echo '   Welcome to the OpenDSA help-via-Makefile'
@@ -98,8 +90,6 @@ TODOlintlib:
 	-@$(JS_LINT) lib/odsaUtils.js
 	-@$(JS_LINT) lib/odsaAV.js
 	-@$(JS_LINT) lib/odsaMOD.js
-	-@$(JS_LINT) lib/gradebook.js
-	-@$(JS_LINT) lib/registerbook.js
 	-@$(JS_LINT) lib/conceptMap.js
 
 jsonlint: ## Runs JSON linter on files in config/ and AV/
@@ -116,30 +106,11 @@ pyLint: ## Runs python linter on files in tools/ and ODSAextensions/
 rst2json: ## Runs the rst2json.py utility
 	$(PYTHON) tools/rst2json.py
 
-JS_FNAMES = odsaUtils odsaAV odsaKA odsaMOD gradebook registerbook JSAV timeme
+JS_FNAMES = odsaUtils odsaAV odsaKA odsaMOD JSAV timeme
 JS_FILES = $(foreach fname, $(JS_FNAMES), lib/$(fname).js)
-JS_MIN_FILES = $(foreach fname, $(JS_FNAMES), lib/$(fname)-min.js)
 
-CSS_FNAMES = site odsaMOD odsaStyle odsaAV odsaKA gradebook
+CSS_FNAMES = site odsaMOD odsaStyle odsaAV odsaKA
 CSS_FILES = $(foreach fname, $(CSS_FNAMES), lib/$(fname).css)
-CSS_MIN_FILES = $(foreach fname, $(CSS_FNAMES), lib/$(fname)-min.css)
-
-min: $(JS_MIN_FILES) $(CSS_MIN_FILES)
-ifeq ($(strip $(ODSA_ENV)),DEV)
-	@echo 'Completed: FAKE-Minify of many .js and .css files (just copied)'
-else
-	@echo 'Completed: Minify of many .js and .css files'
-endif
-
-lib/%-min.js:: lib/%.js
-	@$(JS_MINIFY) $^ > $@
-
-lib/%-min.css:: lib/%.css
-	@$(CSS_MINIFY) $^ > $@
-
-# one file has a special minify process:
-lib/odsaAV-min.css: lib/normalize.css lib/odsaAV.css
-	@$(CSS_MINIFY) lib/normalize.css lib/odsaAV.css > lib/odsaAV-min.css
 
 CONFIGS := $(wildcard config/*.json)
 ALL_BOOKS := $(patsubst config/%.json,%,$(CONFIGS))
@@ -155,27 +126,27 @@ BOOK_NAME: ## creates a book based off of config/BOOK_NAME.json
 	@echo This is just a fake book name, go try a real one
 
 # A Static-Pattern Rule for making Books
-$(BOOKS): % : config/%.json min
+$(BOOKS): % : config/%.json
 	$(PYTHON) $(CONFIG_SCRIPT) $< $(CONFIG_SCRIPT_OPTS)
 	@echo "Created an eBook in Books/: $@"
 
-$(SLIDE_BOOKS) : % : config/%.json min
+$(SLIDE_BOOKS) : % : config/%.json
 	$(PYTHON) $(CONFIG_SCRIPT) --slides $< $(CONFIG_SCRIPT_OPTS)
 	@echo "Created an Slide-eBook in Books/: $@"
 
 
 # Target eBooks with unique recipes below:::
-CS3notes: min
+CS3notes:
 	$(PYTHON) $(CONFIG_SCRIPT) config/CS3slides.json -b CS3notes $(CONFIG_SCRIPT_OPTS)
 
-CS3F18notes: min
+CS3F18notes:
 	$(PYTHON) $(CONFIG_SCRIPT) config/CS3F18slides.json -b CS3F18notes $(CONFIG_SCRIPT_OPTS)
 
-CS5040notes: min
+CS5040notes:
 	$(PYTHON) $(CONFIG_SCRIPT) config/CS5040slides.json -b CS5040notes $(CONFIG_SCRIPT_OPTS)
 
-CS5040MasterN: min
+CS5040MasterN:
 	$(PYTHON) $(CONFIG_SCRIPT) config/CS5040Master.json -b CS5040MasterN $(CONFIG_SCRIPT_OPTS)
 
-CS3SS18notes: min
+CS3SS18notes:
 	$(PYTHON) $(CONFIG_SCRIPT) config/CS3SS18slides.json -b CS3SS18notes $(CONFIG_SCRIPT_OPTS)

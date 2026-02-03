@@ -4,10 +4,16 @@
 .. distributed under an MIT open source license.
 
 .. avmetadata::
-   :author: Susan Rodger and Cliff Shaffer
+   :title: Closure Properties of Regular Grammars
+   :author: Susan Rodger; Cliff Shaffer
+   :institution: Duke University; Virginia Tech
    :requires:
    :satisfies: Closure Properties of Regular Grammars
    :topic: Finite Automata
+   :keyword: Regular Language; Closure Properties
+   :naturallanguage: en
+   :programminglanguage: N/A
+   :description: Presents a number of closure properties for regular languages.
 
 Closure Properties of Regular Grammars
 ======================================
@@ -238,3 +244,5 @@ We have a number of approaches in our toolbox.
 * Define the language in terms of one or more known regular languages
   that are manipulated by operators known to be closed for
   regular languages.
+
+

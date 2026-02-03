@@ -4,10 +4,15 @@
 .. distributed under an MIT open source license.
 
 .. avmetadata::
+   :title: Sample Hash Functions
    :author: Cliff Shaffer
+   :institution: Virginia Tech
    :requires: hash function
    :topic: Hashing
-   :keyword: Hashing; Hash Functions
+   :keyword: Hash Function
+   :naturallanguage: en
+   :programminglanguage: Java; C++
+   :description: Introduction to a sampling of hash functions, and why some are better than others.
 
 
 Sample Hash Functions
@@ -306,3 +311,5 @@ Here are some review questions.
 .. avembed:: Exercises/Hashing/HashFuncSumm.html ka
    :long_name: Hash Function Summary Exercise
    :keyword: Hashing; Hash Functions
+
+

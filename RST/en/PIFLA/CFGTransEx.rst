@@ -4,11 +4,16 @@
 .. distributed under an MIT open source license.
 
 .. avmetadata::
-   :author: Mostafa Mohammed and Cliff Shaffer
+   :title: CFG Transformation Exercises
+   :author: Mostafa Mohammed; Cliff Shaffer
+   :institution: Virginia Tech
    :requires:
    :satisfies:
    :topic: Context-Free Grammars Transformations Exercises
-   :keyword: Context-Free Grammar Transformations
+   :keyword: Context-Free Grammar
+   :naturallanguage: en
+   :programminglanguage: N/A
+   :description: A collection of exercises to transform context-free grammars for given languages.
 
 
 Transforming Grammars Exercises
@@ -38,3 +43,5 @@ Transforming Grammars Exercises
 .. avembed:: AV/OpenFLAP/exercises/FLAssignments/CFL/ChomskyEx.html pe
    :long_name: Transform to Chomsky form
    :keyword: Context-Free Grammar Transformations
+
+

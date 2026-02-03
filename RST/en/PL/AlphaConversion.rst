@@ -4,12 +4,16 @@
 .. distributed under an MIT open source license.
 
 .. avmetadata:: 
-   :author: David Furcy, Tom Naps and Taylor Rydahl
-
+   :title: Alpha-Conversion
+   :author: David Furcy; Tom Naps; Taylor Rydahl
+   :institution: UW-Oshkosh
+   :keyword: Lambda Calculus
+   :naturallanguage: en
+   :programminglanguage: N/A
+   :description: Discusses alpha conversion in the lambda calculus.
 
 .. _alpha-conversion:
 
-================
 Alpha-Conversion
 ================
 
@@ -173,3 +177,5 @@ variable captures. :math:`\alpha`-conversion will be quite useful to
 us in the next section, where we describe the main algorithm for
 determining the meaning of a lambda calculus program, namely the
 process of substitution.
+
+

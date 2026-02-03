@@ -4,11 +4,15 @@
 .. distributed under an MIT open source license.
 
 .. avmetadata::
+   :title: Limits to Computing
    :author: Cliff Shaffer
+   :institution: Virginia Tech
    :satisfies: Limits to Computing
    :topic: Limits to Computing
    :keyword: Limits to Computing
-
+   :naturallanguage: en
+   :programminglanguage: N/A
+   :description: Introductory module for a chapter on reductions, NP Completeness, and Computability. Suitable for a senior-level course on algorithm analysis.
 
 Limits to Computing
 ===================
@@ -79,3 +83,5 @@ The classic example of such a problem is deciding whether an arbitrary
 computer program will go into an infinite loop when processing a
 specified input.
 This is known as the :term:`halting problem`.
+
+

@@ -10,7 +10,7 @@
    :requires: Pointer intro
    :satisfies:
    :topic: Pointers
-   :keyword: Pointers; References
+   :keyword: Pointer; Reference
    :naturallanguage: en
    :programminglanguage: Java
    :description: An introduction to using references in Java, Part 2.
@@ -258,3 +258,5 @@ You can change it to whatever you want, and the value won't typically
 make the program crash.
 Try to remember not to dereference a ``null`` pointer value.
 But don't be surprised when it happens, and your program breaks.
+
+

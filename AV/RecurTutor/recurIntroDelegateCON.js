@@ -5,8 +5,8 @@
 // Title: Basics of Writing a Recursive Function
 // Author: Sally Hamouda; Cliff Shaffer
 // Institution: Virginia Tech
-// Features: Code Visualization; Algorithm Visualization
-// Keyword: Recusion; Delegation
+// Features: Algorithm Visualization; Code Tracing Presentation
+// Keyword: Recursion; Delegation
 // Natural Language: en
 // Programming Language: Java
 /* Description: Slideshow demonstrating the concept of recusion as delegation of a task. */

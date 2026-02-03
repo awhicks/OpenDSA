@@ -4,11 +4,16 @@
 .. distributed under an MIT open source license.
 
 .. avmetadata::
-   :author: Sally Hamouda and Cliff Shaffer
+   :title: Information Flow in Recursive Functions
+   :author: Sally Hamouda; Cliff Shaffer
+   :institution: Virginia Tech
    :requires: mistakes in recursive tree traversal
    :satisfies: recursive function information flow
    :topic: Advanced Recursion
-   :keyword: Binary Tree Traversals; Recursive Tree Functions
+   :keyword: Binary Tree Traversal; Recursive Tree Functions
+   :naturallanguage: en
+   :programminglanguage: Java
+   :description: Discusses how to write a binary tree traversal so as to properly control the various ways information flows into and out of the recursive function.
 
 
 Information Flow in Recursive Functions
@@ -174,3 +179,5 @@ Binary Tree Has Path Sum Exercise
 
 .. extrtoolembed:: 'Binary Tree Has Path Sum Exercise'
    :workout_id: 67
+
+

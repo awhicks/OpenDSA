@@ -10,7 +10,7 @@
    :requires: Commmand line
    :satisfies: Command line parameters
    :topic: Programming Tutorial
-   :keyword: Command Line Parameters
+   :keyword: Command Line Parameter
    :naturallanguage: en
    :programminglanguage: Java
    :description: Introduction to parsing command line parameters in a Java program.
@@ -100,3 +100,5 @@ There you go, simple command line parsing!
 .. |external_link2| raw:: html
 
    <a href="http://docs.oracle.com/javase/tutorial/java/nutsandbolts/switch.html" target="_blank">switch statements</a>
+
+

@@ -7,7 +7,7 @@
    :title: Lists, Loop Idioms, Generics, and the Null Keyword
    :author: Molly Domino
    :institution: Virginia Tech
-   :keyword: Lists; Loops; Generics
+   :keyword: List; Loop; Generics
    :naturallanguage: en
    :programminglanguage: Java
    :description: CS1-level more advanced presentation on loops and introduction to generics.
@@ -822,3 +822,5 @@ Programming Practice 9b: Loops and Generics
      <a href="https://greenteapress.com/wp/think-java-2e/">Think Java: How to Think Like a Computer Scientist</a> version 6.1.3 by Allen B. Downey and Chris Mayfield,
      licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License (CC BY-NC-SA 4.0).
    </div></footer>
+
+

@@ -2,11 +2,11 @@
 // Written by Cliff Shaffer
 // Based on earlier versions by Sushma Mandava and Aditya Tikhe and Milen John
 
-// Title: Java Data TYpes
+// Title: Consequences of Dereferencing a Null Pointer
 // Author: Cliff Shaffer; Sushma Mandava; Aditya Tikhe; Milen John
 // Institution: Virginia Tech
-// Features: Demonstration
-// Keyword: Pointers; Reference; Object
+// Features: Presentation
+// Keyword: Pointer; Reference; Object
 // Natural Language: en
 // Programming Language: Java
 /* Description: Slideshow demonstrating the consequence of dereferencing a null pointer. */

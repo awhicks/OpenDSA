@@ -10,7 +10,7 @@
    :requires:
    :satisfies: debugging
    :topic: Programming Tutorial
-   :keyword: Debugging; Debugging Methods
+   :keyword: Debugging
    :naturallanguage: en
    :programminglanguage: N/A
    :description: Brief introduction to standard approaches to debugging.
@@ -91,3 +91,5 @@ Generally, print-based debugging can conveniently give you a small
 amount of targetted information (that is, you know what you want).
 Otherwise, source-level debugging makes it easy to explore what is
 going on with your code.
+
+

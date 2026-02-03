@@ -4,12 +4,16 @@
 .. distributed under an MIT open source license.
 
 .. avmetadata::
-   :author: Susan Rodger, Cliff Shaffer, and Mostafa Mohammed
+   :title: Minimizing the Number of States in a DFA
+   :author: Susan Rodger; Cliff Shaffer; Mostafa Mohammed
+   :institution: Duke University; Virginia Tech
    :requires: Non-deterministic Finite Automata
    :satisfies: DFA minimization
    :topic: Finite Automata
    :keyword: Finite Automata; DFA Minimization
-
+   :naturallanguage: en
+   :programminglanguage: N/A
+   :description: Presentation of the algorithm to minimize the number of states in a DFA.
 
 Minimizing the Number of States in a DFA
 ========================================
@@ -140,3 +144,5 @@ Minimize the two DFAs.
 If the resulting machines have the same number of nodes, and their
 graphs are isomorphic (that is, identical in their structure and
 their transition labelings), then they must accept the same language.
+
+

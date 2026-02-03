@@ -4,13 +4,17 @@
 .. distributed under an MIT open source license.
 
 .. avmetadata::
+   :title: First Fit Memory Allocation
    :author: Cliff Shaffer
+   :institution: Virginia Tech
    :topic: Memory Management
-   :keyword: Memory Management; Sequential Fit Memory Allocation
+   :keyword: Sequential Fit Memory Manager
+   :naturallanguage: en
+   :programminglanguage: N/A
+   :description: Presents the first fit sequential memory management scheme.
 
-
-First Fit
-=========
+First Fit Memory Allocation
+===========================
 
 First Fit
 ---------
@@ -35,3 +39,5 @@ Now try it for yourself with the following exercise.
 .. avembed:: AV/MemManage/firstFitPRO.html pe
    :long_name: First Fit Proficiency Exercise
    :keyword: Memory Management; Sequential Fit Memory Allocation
+
+

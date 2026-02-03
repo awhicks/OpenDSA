@@ -1,45 +1,274 @@
-.jsavcontainer{
-  letter-spacing: 0px;
+/* override reveal's defaults */
+.reveal {
+  --r-main-font-size: 24px;
+  --r-heading1-size: 2.5em;
+  --r-heading2-size: 1.6em;
+  --r-heading3-size: 1.3em;
+  --r-heading4-size: 1em;
+}
+
+.reveal .slides {
+  font-size: 24px;
+}
+
+/* Explicitly set reveal's layout (since disableLayout = true) */
+.reveal .slides > section,
+.reveal .slides > section > section {
+  position: absolute;
+  left: 5%;
+  top: 5%;
+  width: 90%;
+  height: 90%;
+  text-align: left;
+}
+
+/* Centering specific content */
+.reveal .center {
+  text-align: center;
+}
+
+/* Centering images  */
+.reveal img.align-center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Slides: Code blocks */
+.reveal .highlight pre,
+.reveal .highlight-guess pre,
+.reveal pre.literal-block {
+  width: 100%;
+  max-width: none;
+  box-sizing: border-box;
+  white-space: pre-wrap !important;
+  word-wrap: break-word !important;
+  overflow: visible !important;  
+  background-color: #f8f8f8 !important;
+  border: 1px solid #ccc !important;
+  padding: 12px !important;
+  border-radius: 6px !important;
+  min-height: fit-content !important;
+  height: auto !important;
+  display: block !important;
+  margin: 10px 0 !important;
+}
+
+/* Slides: Code block fragments */
+.reveal .fragment .highlight pre,
+.reveal .fragment .highlight-guess pre,
+.reveal .fragment pre.literal-block {
+  width: 100%;
+  max-width: none;
+  box-sizing: border-box;
+  white-space: pre-wrap !important;
+  word-wrap: break-word !important;
+  overflow: visible !important; 
+  background-color: #f8f8f8 !important;
+  border: 1px solid #ccc !important;
+  padding: 12px !important;
+  border-radius: 6px !important;
+  min-height: fit-content !important;
+  height: auto !important;
+  display: block !important;
+  margin: 10px 0 !important;
+}
+
+/* jsav fixes */
+.jsavcontainer {
+  letter-spacing: 0;
   text-shadow: none;
 }
-.divdgm .jsavlabel{
-  font-size: 13px;
-  font-family: san-serif;
+
+.jsavcanvas {
+  overflow: visible !important;
 }
-.highlight, .highlight-guess{
-  font-size: 15px;
+
+
+/* Slides: prevent scrollbars on JSAV canvas */
+.reveal .ssAV .jsavcanvas,
+.reveal .ffAV .jsavcanvas {
+  overflow: visible !important;
+  max-width: none !important;
+  max-height: none !important;
 }
-/*.jsavcode.jsavcenter{
-  width: 500px;
-}*/
-ul li::before {
-    content: none;
-    width: 0px;
-    margin-left: 0px;
+
+.reveal .divdgm .jsavcanvas {
+  overflow: visible !important;
+  max-width: none !important;
 }
-.jsavcanvas{
-  /*min-height: 600px;*/
-  overflow-x: visible;
+
+.divdgm text,
+.divdgm .jsavlabel {
+  font-family: 'Times New Roman', Times, serif !important;
 }
-.hide{
-  display: none;
-}
-.jsavvaluelabel{
+
+.highlight, .highlight-guess,
+.ui-widget {
   font-size: 15px;
 }
 
-/*.jsavlabel{
-  line-height: 1em;
-}*/
-.jsavarray{
-  font-size: 15px;
+.MathJax, .MathJax_Display {
+  font-size: 100% !important;
 }
-.jsavlist{
-  font-size: 15px; 
+
+/* remove list markers */
+ul li::before {
+  content: none;
+  width: 0;
+  margin-left: 0;
 }
-.MathJax, .MathJax_Display  {
-  font-size: 40% ;
+
+/* hide notes  */
+.reveal .note,
+.reveal .admonition.note {
+  display: none !important;
 }
-.ui-widget{
-  font-size: 15px;
+
+/* Table of contents */
+.reveal .toctree-wrapper {
+  font-size: 18px !important;
+}
+
+.reveal .toctree-wrapper ul {
+  list-style: none !important;
+  padding-left: 20px !important;
+}
+
+.reveal .toctree-l2,
+.reveal .toctree-l3,
+.reveal .toctree-l4 {
+  display: none !important;
+}
+
+.reveal .toctree-l1 {
+  display: block !important;
+  margin-bottom: 10px !important;
+}
+
+.reveal .toctree-wrapper a {
+  color: #2a76dd !important;
+  text-decoration: none !important;
+}
+
+.reveal .toctree-wrapper a:hover {
+  text-decoration: underline !important;
+}
+
+/* hide index & search links */
+.reveal .toctree-wrapper + div + ul {
+  display: none !important;
+}
+
+/* Hidden slides need to exist for JSAV to measure correctly */
+.reveal .slides > section,
+.reveal .slides > section > section {
+  display: block !important;    
+}
+
+.reveal .slides > section:not(.present),
+.reveal .slides > section > section:not(.present) {
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.reveal .slides > section.present,
+.reveal .slides > section > section.present {
+  visibility: visible;
+  pointer-events: auto;
+}
+
+
+.reveal .jsavcontainer,
+.reveal .divdgm,
+.reveal .ssAV {
+  font-size: initial;
+}
+
+.reveal pre[data-id],
+.reveal pre.literal-block,
+.reveal .highlight {
+  background: #f8f8f8 !important;
+  border: 1px solid #ccc !important;
+  border-radius: 6px !important;
+  margin: 12px 0 !important;
+  padding: 0 !important;                  
+  width: 100% !important;
+  max-width: none !important;
+  box-shadow: none !important;
+  overflow: visible !important;
+}
+
+.reveal pre[data-id] code,
+.reveal pre.literal-block code,
+.reveal .highlight pre,
+.reveal pre code,
+.reveal pre code.guess {
+  background: transparent !important;
+  border: 0 !important;
+  margin: 0 !important;
+  padding: 12px !important;
+  white-space: pre !important;
+  word-wrap: normal !important;
+  overflow: visible !important;
+  max-height: none !important;             
+  display: block !important;
+}
+
+/* Force no scrollbars on all code blocks */
+.reveal pre {
+  overflow: visible !important;
+  max-width: 100% !important;
+}
+
+.reveal code {
+  overflow: visible !important;
+}
+
+.reveal .ssAV,
+.reveal .ffAV,
+.reveal .jsavcontainer {
+  overflow: visible !important;
+}
+.reveal .jsavcanvas,
+.reveal .jsavcanvas svg { 
+  overflow: visible !important; 
+}
+
+.reveal .jsavcode pre {
+  background: #efefef !important; 
+  border: 1px solid #ddd !important;
+  white-space: pre !important;
+  word-wrap: normal !important;
+}
+
+.reveal .chalkboard .chalkboard-canvas {
+  pointer-events: auto !important;
+  z-index: 100 !important;
+}
+
+/* Center single array JSAV visualizations */
+.reveal .ssAV .jsavcanvas:not(:has(.jsavcode)) .jsavarray:not([style*="display: none"]) {
+  margin: 0 auto !important;
+  display: table !important;
+}
+
+/* Center standalone code blocks */
+.reveal .ssAV .jsavcanvas > .jsavcode:first-child:last-child:not([style*="display: none"]) {
+  margin: 0 auto !important;
+  display: table !important;
+}
+
+.reveal #InsertionSortWorstCaseCON .jsavcode,
+.reveal #InsertionSortBestCaseCON .jsavcode,
+.reveal #InsertionSortAverageCaseCON .jsavcode,
+.reveal #BSTinsertCON .jsavcode {
+  margin: 0 auto !important;
+}
+
+.reveal #InsertionSortWorstCaseCON .jsavcode:not([style*="display: none"]),
+.reveal #InsertionSortBestCaseCON .jsavcode:not([style*="display: none"]),
+.reveal #InsertionSortAverageCaseCON .jsavcode:not([style*="display: none"]),
+.reveal #BSTinsertCON .jsavcode:not([style*="display: none"]) {
+  display: table !important;
 }

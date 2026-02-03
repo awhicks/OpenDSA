@@ -82,3 +82,5 @@ Binary Search Trees
    :math:`d` is :math:`O(\log n)` if the tree is balanced.
 
    What is the worst case cost? When?
+
+

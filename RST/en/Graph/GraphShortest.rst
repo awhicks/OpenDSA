@@ -4,12 +4,16 @@
 .. distributed under an MIT open source license.
 
 .. avmetadata::
+   :title: Shortest-Paths Problems
    :author: Cliff Shaffer
+   :institution: Virginia Tech
    :requires: graph traversal
    :satisfies: graph shortest path
    :topic: Graphs
-   :keyword: Graphs; Shortest-Paths Problems; Dijkstra's Algorithm
-
+   :keyword: Shortest Path Problem
+   :naturallanguage: en
+   :programminglanguage: N/A
+   :description: Introduces the concept of shortest paths problems, and presents Dijkstra's algorithm for single-source shortest paths.
 
 Shortest-Paths Problems
 =======================
@@ -272,3 +276,5 @@ Now you can practice using Dijkstra's algorithm.
    :type: Exercise
 
    Summary battery of questions for Dijkstra's algorithm
+
+

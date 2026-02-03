@@ -4,12 +4,16 @@
 .. distributed under an MIT open source license.
 
 .. avmetadata::
+   :title: Heaps and Priority Queues
    :author: Cliff Shaffer
+   :institution: Virginia Tech
    :requires: binary tree terminology; BST; complete tree
    :satisfies: heap; priority queue
    :topic: Heaps
    :keyword: Heap; Priority Queue
-
+   :naturallanguage: en
+   :programminglanguage: Java
+   :description: Presentation of heaps, and their use to implement priority queues.
 
 Heaps and Priority Queues
 =========================
@@ -401,3 +405,5 @@ For a story about Priority Queues and dragons, see |external_link|.
 .. |external_link| raw:: html
 
    <a href="http://computationaltales.blogspot.com/2011/04/stacks-queues-priority-queues-and.html" target="_blank">Computational Fairy Tales: Stacks, Queues, Priority Queues, and the Prince's Complaint Line</a>
+
+

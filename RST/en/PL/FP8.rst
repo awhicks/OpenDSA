@@ -4,9 +4,14 @@
 .. distributed under an MIT open source license.
 
 .. avmetadata:: 
-   :author: David Furcy and Tom Naps
+   :title: Combining Map and Reduce
+   :author: David Furcy; Tom Naps
+   :institution: UW-Oshkosh
+   :keyword: Functional Programming
+   :naturallanguage: en
+   :programminglanguage: N/A
+   :description: Discusses combining the map and reduce patterns.
 
-========================
 Combining Map and Reduce
 ========================
    
@@ -69,3 +74,5 @@ You must solve it correctly three times in a row to earn credit for it.
 
 .. avembed:: Exercises/PL/MapReduce.html ka
    :long_name: Map Reduce
+
+

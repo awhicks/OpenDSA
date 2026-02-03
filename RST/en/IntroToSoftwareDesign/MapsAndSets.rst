@@ -7,7 +7,7 @@
    :title: Maps and Sets
    :author: Molly Domino
    :institution: Virginia Tech
-   :keyword: Maps; Sets
+   :keyword: Map; Set
    :naturallanguage: en
    :programminglanguage: Java
    :description: CS1-level introduction to maps and sets.
@@ -311,7 +311,7 @@ answer some or all of the questions.
 
 .. raw:: html
 
-    <a href="https://virginiatech.questionpro.com/t/AYIrDZ5G9Y" target="_blank">CS 1114 Grading Policies Survey 2</a>
+    <a href="https://virginiatech.questionpro.com/t/AYIrDZ65ya" target="_blank">CS 1114 Grading Policies Survey 2</a>
 
 Please answer below and your submission of the survey will be verified
 for credit.
@@ -621,3 +621,5 @@ Programming Practice: Maps
      <a href="https://greenteapress.com/wp/think-java-2e/">Think Java: How to Think Like a Computer Scientist</a> version 6.1.3 by Allen B. Downey and Chris Mayfield,
      licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License (CC BY-NC-SA 4.0).
    </div></footer>
+
+

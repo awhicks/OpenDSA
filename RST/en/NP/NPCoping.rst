@@ -4,10 +4,14 @@
 .. distributed under an MIT open source license.
 
 .. avmetadata::
+   :title: Coping with NP-Complete Problems
    :author: Cliff Shaffer
+   :institution: Virginia Tech
    :topic: NP-completeness
-   :keyword: NP-completeness; Dynamic Programming; Knapsack Problem
-
+   :keyword: NP-Complete; Dynamic Programming; Knapsack Problem
+   :naturallanguage: en
+   :programminglanguage: N/A
+   :description: Presents strategies for dealing with problems that must be solved even if they are are known to be NP-Complete.
 
 Coping with NP-Complete Problems
 ================================
@@ -248,3 +252,5 @@ Acknowledgement
 
 This page is heavily influenced by the presentation in Section 11.5 of
 *Introduction to Algorithms* by Udi Manber.
+
+

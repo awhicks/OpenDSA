@@ -12,7 +12,7 @@
    :topic: Sorting, Code Tuning
    :keyword: Sorting; N-squared Sorts; Code Tuning
    :naturallanguage: en
-   :programminglanguage: Java; CPP
+   :programminglanguage: Java; C++
    :description: Variations on n-squared sorts to demonstrate code tuning principles.
 
 
@@ -246,3 +246,5 @@ However, if we were to sort a simple array of ``int`` values, the cost
 for all sorting algorithms will be less than half that shown.
 If we use a the more complicated ``KVPair`` objects, the costs will
 more than double over those shown in the table.
+
+

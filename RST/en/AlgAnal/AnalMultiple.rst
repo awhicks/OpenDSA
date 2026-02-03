@@ -76,3 +76,5 @@ But, if :math:`P` is smaller, or :math:`C` larger (even if it is still
 less than :math:`P`), then :math:`C \log C` can become the larger
 quantity.
 Thus, neither variable should be ignored.
+
+

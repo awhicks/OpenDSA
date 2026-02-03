@@ -8,7 +8,6 @@
 #   - Initializes the output directory
 #     - Creates the output directory and a source directory inside it
 #     - Copies _static directory to the source directory
-#     - Creates a copy of the config file in the _static directory for use by the gradebook page
 #   - Generates an index.html file in the output directory of the new book which redirects (via JavaScript) to the book_output_dir (html/)
 #   - Traverses the 'chapters' section of the configuration file
 #     - For each chapter and module, maps the name to its chapter or module number (used for numbering during postprocessing)
@@ -45,6 +44,32 @@ import config_templates
 from ODSA_RST_Module import ODSA_RST_Module
 from ODSA_Config import ODSA_Config
 from postprocessor import update_TOC, update_TermDef, make_lti
+
+# Register stub directives for reveal to prevent errors during processing
+# Otherwise, the directives will either be empty or not found. They get filled by reveal.js during the actual build process
+from docutils import nodes
+from docutils.parsers.rst import Directive, directives
+
+class StubRevealJSDirective(Directive):
+    """Stub directive to preserve content for sphinx-revealjs to process later"""
+    has_content = True
+    optional_arguments = 100  # Allow any arguments
+    option_spec = {}  # Accept any options
+    
+    def run(self):
+        # container preserves all content
+        container = nodes.container()
+        if self.content:
+            self.state.nested_parse(self.content, self.content_offset, container)
+        return [container]
+
+# Only register if building slides (checked later when SLIDES env var is set on)
+def register_revealjs_stubs():
+    """Register stub directives for sphinx-revealjs"""
+    directives.register_directive('revealjs-slide', StubRevealJSDirective)
+    directives.register_directive('revealjs-fragments', StubRevealJSDirective)
+    directives.register_directive('revealjs-section', StubRevealJSDirective)
+    directives.register_directive('revealjs-break', StubRevealJSDirective)
 
 # List ocanvas_module_idf exercises encountered in RST files that do not appear in the
 # configuration file
@@ -251,11 +276,6 @@ def generate_index_rst(config, slides=False, standalone_modules=False):
         index_rst.write(".. toctree::\n")
         index_rst.write("   :maxdepth: 3\n\n")
 
-        # Process the Gradebook and Registerbook as well
-        # if not slides:
-        #     process_module(config, mod_path='Gradebook', index_rst=index_rst)
-        #     process_module(config, mod_path='RegisterBook', index_rst=index_rst)
-
         # If a ToDo file will be generated, append it to index.rst
         if len(todo_list) > 0:
             index_rst.write("   ToDo\n")
@@ -394,7 +414,7 @@ def initialize_conf_py_options(config, slides):
     # files are generated) and the root ODSA directory
     options['eb2root'] = config.rel_build_to_odsa_path
     options['rel_book_output_path'] = config.rel_book_output_path
-    options['slides_lib'] = 'hieroglyph' if slides else ''
+    options['slides_lib'] = 'revealjs' if slides else ''
     options['local_mode'] = str(config.local_mode).title()
 
     # makes sure the ebook uses the same python exec as this script
@@ -402,13 +422,13 @@ def initialize_conf_py_options(config, slides):
 
     if config.include_tree_view:
         if options['html_js_files'] != "":
-            options['html_js_files'] = options['html_js_files'] + ", '" + options['eb2root']+"lib/accessibility.js" + "'"
+            options['html_js_files'] = options['html_js_files'] + ", '" + options['eb2root']+"lib/codeinclude_accessibility.js" + "'"
         else:
-            options['html_js_files'] = ",'" + options['eb2root'] + "lib/accessibility.js" + "'"
+            options['html_js_files'] = ",'" + options['eb2root'] + "lib/codeinclude_accessibility.js" + "'"
         if options['html_css_files'] != "":
-            options['html_css_files'] = options['html_css_files'] + ", '" + options['eb2root']+"lib/accessibility.css" + "'"
+            options['html_css_files'] = options['html_css_files'] + ", '" + options['eb2root']+"lib/codeinclude_accessibility.css" + "'"
         else:
-            options['html_css_files'] = ",'" + options['eb2root']+"lib/accessibility.css" + "'"
+            options['html_css_files'] = ",'" + options['eb2root']+"lib/codeinclude_accessibility.css" + "'"
 
     # Sets the value to be used to indicate book sections.
     options['chapnum'] = config.chapter_name
@@ -587,6 +607,9 @@ if __name__ == "__main__":
     parser.add_argument("--standalone-modules", help="Compile all modules such that each module has no links to other modules.",action="store_true", default=False)
     parser.add_argument("--verbose", help="Shows more output during building",action="store_true", default=False)
     args = parser.parse_args()
+
+    # Register revealjs stub directives for all builds (slides and notes)
+    register_revealjs_stubs()
 
     if args.slides:
         os.environ['SLIDES'] = 'yes'

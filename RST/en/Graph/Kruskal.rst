@@ -4,11 +4,15 @@
 .. distributed under an MIT open source license.
 
 .. avmetadata::
+   :title: Kruskal's Minimal Cost Spanning Tree Algorithm
    :author: Cliff Shaffer
+   :institution: Virginia Tech
    :requires: MCST; Union/Find
    :topic: Graphs
-   :keyword: Graphs; Minimal-Cost Spanning Trees; Kruskal's Algorithm
-
+   :keyword: Minimal-Cost Spanning Tree; Union/Find Algorithm
+   :naturallanguage: en
+   :programminglanguage: N/A
+   :description: Presents Kruskal's minimal-cost spanning tree algorithm.
 
 Kruskal's Algorithm
 ===================
@@ -73,3 +77,5 @@ If so, the cost is often close to
    :type: Exercise
 
     Summary battery of questions for Prim's and Kruskal's algorithms.
+
+

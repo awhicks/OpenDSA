@@ -4,11 +4,15 @@
 .. distributed under an MIT open source license.
 
 .. avmetadata::
-   :author: Mostafa Mohammed and Cliff Shaffer
+   :title: Pushdown Automata
+   :author: Mostafa Mohammed; Cliff Shaffer
+   :institution: Virginia Tech
    :satisfies: PDA Module
-   :topic: Pushdown Automaton
-   :keyword: Pushdown Automaton
-
+   :topic: Pushdown Automata
+   :keyword: Pushdown Automata
+   :naturallanguage: en
+   :programminglanguage: N/A
+   :description: Introduction to Pushdown Automata, including visualizations and Programmed Instruction presentations.
 
 Pushdown Automata
 =================
@@ -113,3 +117,5 @@ Something to Think About
    Certainly it can, but can it do this deterministically?
 #. Can the PDA recognize the language $ww^R$?
    Yes, but can it do this deterministically?
+
+

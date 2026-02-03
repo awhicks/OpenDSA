@@ -4,9 +4,14 @@
 .. distributed under an MIT open source license.
 
 .. avmetadata:: 
-   :author: David Furcy and Tom Naps
+   :title: List Construction and Deconstruction
+   :author: David Furcy; Tom Naps
+   :institution: UW-Oshkosh
+   :keyword: Functional Programming
+   :naturallanguage: en
+   :programminglanguage: N/A
+   :description: Introduces basic concepts for functional programming.
 
-====================================
 List Construction and Deconstruction
 ====================================
 
@@ -221,4 +226,6 @@ The final problem in this section deals with the syntax and semantics of the ``f
 
 .. avembed:: Exercises/PL/FPisEq.html ka
    :long_name: Using isEq test
+
+
 

@@ -7,7 +7,7 @@
    :title: Conditional and Repeating Actions
    :author: Molly Domino; Steve Edwards
    :institution: Virginia Tech
-   :keyword: Conditional Statements; While Loops
+   :keyword: Conditional Statement; While Loop
    :naturallanguage: en
    :programminglanguage: Java
    :description: First semester programming course introduction to conditional statements and while loops.
@@ -478,31 +478,6 @@ Syntax Practice 3d: Compound Conditions
    :workout_id: 1376
 
 
-Your Opinions on Learning and Engagement
-----------------------------------------
-
-Please complete the survey at the link provided below. The survey results
-will be used to improve this course, and your input is critical because we
-want to create the best experience possible for students. Because it will
-take you about 10 to 15 minutes to complete, you will receive credit for
-completing it.
- 
-Near the end of the survey you will be asked if you consent for this
-information to be used in a study about perceptions of student learning
-and engagement, which is optional. There is no additional work on your
-part if you provide consent for your responses to be used in the study.
- 
-.. raw:: html
-
-    <a href="https://virginiatech.questionpro.com/t/AUHNlZ5Dux" target="_blank">CS 1114 Engagement Survey 1</a>
- 
-Please answer below and your participation in the survey will be verified
-for credit.
-
-.. avembed:: Exercises/IntroToSoftwareDesign/MUSICSurvey.html ka
-   :long_name: Survey Completed
-
-
 Repeating Actions
 -----------------
 
@@ -666,3 +641,5 @@ Check Your Understanding
      <a href="https://greenteapress.com/wp/think-java-2e/">Think Java: How to Think Like a Computer Scientist</a> version 6.1.3 by Allen B. Downey and Chris Mayfield,
      licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License (CC BY-NC-SA 4.0).
    </div></footer>
+
+

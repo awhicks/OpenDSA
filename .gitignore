@@ -63,9 +63,17 @@ Metadata/missing_catalog_metadata.json
 Metadata/missing_SLCItem_metadata.json
 Metadata/SLCItem_metadata.json
 Metadata/summary_metadata.json
+Metadata/ExpandedChapter_metadata.json
+Metadata/standalone_directories.json
+Metadata/inlineav
+
+#Ignore chapter config files
+
+config/ChapterConfigs
 
 # Ignore LMS course configuration files
 config/temp/temp*.*
+config/temp/*
 config/*_generated.json
 
 # cache files for sublime text

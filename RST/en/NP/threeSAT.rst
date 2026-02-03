@@ -4,10 +4,14 @@
 .. distributed under an MIT open source license.
 
 .. avmetadata::
+   :title: 3-CNF Satisfiability
    :author: Nabanita Maji
+   :institution: Virginia Tech
    :topic: NP-completeness
-   :keyword: NP-completeness; 3-SAT Problem
-
+   :keyword: NP-Complete; Satisfiability Problem
+   :naturallanguage: en
+   :programminglanguage: N/A
+   :description: Presents the 3-CNF Satisfiability problem. Includes an exercise to practice finding satisfiable truth settings.
 
 3-CNF Satisfiability
 ====================
@@ -27,3 +31,5 @@ Try out an instance of the 3-SAT problem on your own.
 .. avembed:: Exercises/NP/threeSATPRO.html ka
    :long_name: Practice Exercise for 3-SAT
    :keyword: NP-completeness; 3-CNF Satisfiabilty
+
+

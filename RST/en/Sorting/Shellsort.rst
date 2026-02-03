@@ -13,7 +13,7 @@
    :keyword: Sorting; Shellsort
    :naturallanguage: en
    :programminglanguage: Java
-   :description: Presentation of Shellsort including visualizations, code, and self-test questions and exercises
+   :description: Presentation of Shellsort including visualizations, code, and self-test questions and exercises.
 
 .. index:: ! Shellsort
 .. index:: Insertion Sort, Selection Sort
@@ -295,3 +295,5 @@ Here are some review questions to check that you understand Shellsort.
 If you want to know more about Shellsort, you can find a lot of
 details about its analysis along with ideas on how to pick a good
 increment series in [KnuthV3]_.
+
+

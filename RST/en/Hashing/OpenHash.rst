@@ -3,13 +3,17 @@
 .. Copyright (c) 2012-2020 by the OpenDSA Project Contributors, and
 .. distributed under an MIT open source license.
 
-.. avmetadata:: 
+.. avmetadata::
+   :title: Open Hashing
    :author: Cliff Shaffer
+   :institution: Virginia Tech
    :requires: hash function
    :satisfies: open hashing
    :topic: Hashing
-   :keyword: Hashing; Open Hashing
-
+   :keyword: Open Hashing
+   :naturallanguage: en
+   :programminglanguage: N/A
+   :description: Introduction to the concept of open hashing.
 
 Open Hashing
 ============
@@ -89,3 +93,5 @@ other way.
 .. avembed:: Exercises/Hashing/OpenHashPRO.html ka
    :long_name: Open Hashing Proficiency Exercise
    :keyword: Hashing; Open Hashing
+
+

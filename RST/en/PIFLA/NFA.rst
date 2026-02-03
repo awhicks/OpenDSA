@@ -4,12 +4,16 @@
 .. distributed under an MIT open source license.
 
 .. avmetadata::
-   :author: Susan Rodger, Cliff Shaffer, and Mostafa Mohammed, John Taylor
+   :title: NFA: Non-Deterministic Finite Automata
+   :author: Susan Rodger; Cliff Shaffer; Mostafa Mohammed; John Taylor
+   :institution: Duke University; Virginia Tech
    :requires: Deterministic Finite Automata
    :satisfies: Non-deterministic Finite Automata
    :topic: Finite Automata
-   :keyword: Finite Automata; Non-Deterministic Finite Automata
-
+   :keyword: Non-Deterministic Finite Automata
+   :naturallanguage: en
+   :programminglanguage: N/A
+   :description: Introduction to Non-Deterministic Finite Automata
 
 NFA: Non-Deterministic Finite Automata
 ======================================
@@ -148,3 +152,5 @@ And fourth, non-determinism is a useful concept to help simplify other
 concepts that we will cover later.
 A good example will be the study of so-called :term:`NP-Complete`
 problems (where NP stands for nondeterministic polynomial).
+
+

@@ -4,10 +4,14 @@
 .. distributed under an MIT open source license.
 
 .. avmetadata::
+   :title: Circuit Satisfiability
    :author: Nabanita Maji
+   :institution: Virginia Tech
    :topic: NP-completeness
-   :keyword: NP-completeness; Circuit Satisfiability Problem
-
+   :keyword: NP-Complete; Circuit Satisfiability Problem
+   :naturallanguage: en
+   :programminglanguage: N/A
+   :description: Visual introduction to the Circuit Satisfiability problem.
 
 Circuit Satisfiability
 ======================
@@ -26,3 +30,5 @@ While it is easy to check whether a given truth assignment satisfies a
 given circuit,
 we have no easy way of knowing whether an arbitrary cirucit has some
 satisfying assignment.
+
+

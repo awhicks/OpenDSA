@@ -4,14 +4,18 @@
 .. distributed under an MIT open source license.
 
 .. avmetadata::
+   :title: Heapsort
    :author: Cliff Shaffer
+   :institution: Virginia Tech
    :requires: heap
    :satisfies: heapsort
    :topic: Sorting
-   :keyword: Sorting; Heapsort
+   :keyword: Heapsort
+   :naturallanguage: en
+   :programminglanguage: Java
+   :description: Presentation of Heapsort, including visualizations and practice exercises.
 
 .. index:: ! Heapsort
-
 
 Heapsort
 ========
@@ -137,3 +141,5 @@ the heap each in constant time, for a total best-case time of
 .. avembed:: Exercises/Sorting/HeapsortSumm.html ka
    :long_name: Heapsort Summary Exercise
    :keyword: Sorting; Heapsort
+
+

@@ -4,11 +4,16 @@
 .. distributed under an MIT open source license.
 
 .. avmetadata:: 
-   :author: David Furcy and Tom Naps
+   :title: Using Helper Functions with Accumulators
+   :author: David Furcy; Tom Naps
+   :institution: UW-Oshkosh
+   :keyword: Functional Programming
+   :naturallanguage: en
+   :programminglanguage: N/A
+   :description: Discusses use of helper functions with accumulators in a functional programming language
 
-=================================================================
 Using Helper Functions with Accumulators
-=================================================================
+========================================
 
 .. _reverse:
 
@@ -94,3 +99,5 @@ It is a randomized problem. You have to solve it three times in a row.
 
 .. avembed:: Exercises/PL/AccumulatorPatternPractice.html ka
    :long_name: Accumulator Pattern Practice
+
+

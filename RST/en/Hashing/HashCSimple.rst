@@ -4,14 +4,18 @@
 .. distributed under an MIT open source license.
 
 .. avmetadata::
+   :title: Simple Collision Resolution
    :author: Cliff Shaffer
+   :institution: Virginia Tech
    :requires: open hashing
    :satisfies: collision resolution
    :topic: Hashing
    :keyword: Hashing; Collision Resolution
+   :naturallanguage: en
+   :programminglanguage: N/A
+   :description: Introduction to the concept of collision resolution, with an explanation for why linear probing is inefficient.
 
 .. index:: ! collision resolution
-
 
 Collision Resolution
 ====================
@@ -134,3 +138,5 @@ long probe sequences.
 .. avembed:: Exercises/Hashing/HashLinearPPRO.html ka
    :long_name: Linear Probing Proficiency Exercise
    :keyword: Hashing; Collision Resolution
+
+

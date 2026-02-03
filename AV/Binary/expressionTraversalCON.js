@@ -1,5 +1,16 @@
 /*global ODSA */
 // Traverse an expression tree
+
+// Title: Traverse an expression tree
+// Author: Cliff Shaffer
+// Institution: Virginia Tech
+// Features: Algorithm Visualization; Code Tracing Presentation
+// Keyword: Expression Tree; Binary Tree Traversal; Full Binary Tree
+// Natural Language: en
+// Programming Language: Java
+
+/* Description: Slideshow demonstrating traversal of an expression tree. The primary point is to highlight the node implementation for a full binary tree. */
+
 $(document).ready(function() {
   "use strict";
 
@@ -9,7 +20,7 @@ $(document).ready(function() {
       code = config.code;                   // get the code object
   var av = new JSAV(av_name);
   var pseudo = av.code(code[0]);
-  var labelTop = 260;
+  var labelTop = 285;
 
   var bt = av.ds.binarytree({visible: true, nodegap: 15});
   bt.root("-");

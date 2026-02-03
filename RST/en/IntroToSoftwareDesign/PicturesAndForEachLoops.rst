@@ -7,7 +7,7 @@
    :title: Pictures and For-each Loops
    :author: Molly Domino
    :institution: Virginia Tech
-   :keyword: For-each Loops; Image Representation
+   :keyword: For-Each Loop; Image Representation
    :naturallanguage: en
    :programminglanguage: Java
    :description: First semester programming course introduction to image representations and for-each loops.
@@ -512,3 +512,5 @@ Programming Practice 6b
      <a href="https://greenteapress.com/wp/think-java-2e/">Think Java: How to Think Like a Computer Scientist</a> version 6.1.3 by Allen B. Downey and Chris Mayfield,
      licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License (CC BY-NC-SA 4.0).
    </div></footer>
+
+

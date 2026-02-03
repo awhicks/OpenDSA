@@ -4,14 +4,18 @@
 .. distributed under an MIT open source license.
 
 .. avmetadata::
-   :author: Mostafa Mohammed and Cliff Shaffer
+   :title: DFA Minimization Exercises
+   :author: Mostafa Mohammed; Cliff Shaffer
+   :institution: Virginia Tech
    :satisfies: 
    :topic: DFA Minimization
-
+   :keyword: Finite Automata; DFA Minimization
+   :naturallanguage: en
+   :programminglanguage: N/A
+   :description: Provides self-test exercises for practicing the DFA state minimization algorithm.
 
 DFA Minimization Exercises
 ==========================
-
 
 DFA Minimization Exercises
 --------------------------
@@ -23,3 +27,5 @@ DFA Minimization Exercises
 
 .. avembed:: AV/OpenFLAP/exercises/FLAssignments/FA/DFAMinEx4.html pe
    :long_name: DFA minimization exercise
+
+

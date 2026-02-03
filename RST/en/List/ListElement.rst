@@ -3,13 +3,17 @@
 .. Copyright (c) 2012-2020 by the OpenDSA Project Contributors, and
 .. distributed under an MIT open source license.
 
-.. avmetadata:: 
+.. avmetadata::
+   :title: List Element Implementations
    :author: Cliff Shaffer
+   :institution: Virginia Tech
    :requires: list ADT
    :satisfies: list element implementation
    :topic: Lists
    :keyword: List Element Implementation
-
+   :naturallanguage: en
+   :programminglanguage: Java
+   :description: Discusses design of the element representation for a linked list.
 
 List Element Implementations
 ============================
@@ -97,3 +101,5 @@ Practice Questions
 .. avembed:: Exercises/List/ListSumm.html ka
    :long_name: List Summary Questions
    :keyword: List Element Implementation
+
+

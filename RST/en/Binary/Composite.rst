@@ -4,11 +4,16 @@
 .. distributed under an MIT open source license.
 
 .. avmetadata::
+   :title: Composite-based Expression Tree
    :author: Cliff Shaffer
+   :institution: Virginia Tech
    :requires: binary tree terminology; design patterns; expression tree
    :satisfies: composite
    :topic: Binary Trees, Design Patterns
-   :keyword: Binary Trees; Design Patterns; Composite Design
+   :keyword: Binary Tree; Design Pattern; Composite Design
+   :naturallanguage: en
+   :programminglanguage: Java
+   :description: Presents the concept of a composite design pattern, used in this case to implement an Expression Tree.
 
 
 Composite-based Expression Tree
@@ -38,7 +43,7 @@ children.
 
 .. .. inlineav:: compositeTraversalCON ss
       :long_name: Composite Expression Tree Traversal Slideshow
-..    :links: AV/Binary/BTCON.css
+      :links: AV/Binary/BTCON.css
       :scripts: AV/Binary/compositeTraversalCON.js
       :output: show
       :keyword: Binary Trees; Design Patterns; Composite Design
@@ -93,3 +98,5 @@ other behavior needed by this node type to do its job.
 This breaks down the complexity that many programmers feel overwhelmed
 by when dealing with complex information flows related to recursive
 processing.
+
+

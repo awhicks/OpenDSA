@@ -4,11 +4,15 @@
 .. distributed under an MIT open source license.
 
 .. avmetadata::
-   :author: Mostafa Mohammed and Cliff Shaffer
+   :title: Regular Expressions
+   :author: Mostafa Mohammed; Cliff Shaffer
+   :institution: Virginia Tech
    :satisfies: Regular Expressions
    :topic: Regular Expressions
-   :keyword: Regular Expressions
-
+   :keyword: Regular Expression
+   :naturallanguage: en
+   :programminglanguage: N/A
+   :description: Introduction to Regular Expressions, with definitions and examples.
 
 Regular Expressions
 ===================
@@ -61,3 +65,5 @@ As we will prove soon, regular expressions don't give us any more
 power than we already had with DFAs.
 But they are often easier to write down, as you will see in the
 following exercises.
+
+

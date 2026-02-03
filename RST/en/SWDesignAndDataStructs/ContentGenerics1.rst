@@ -37,10 +37,10 @@ Interactive: Generics Intro Video
 
    .. raw:: html
 
-      <a href="https://courses.cs.vt.edu/cs2114/SWDesignAndDataStructs/examples/ArrayBasics.java"  target="_blank">
+      <a href="https://courses.cs.vt.edu/cs2114/SWDesignAndDataStructs/examples/ArrayBasics.java" target="_blank" download="ArrayBasics.java">
       <img src="https://courses.cs.vt.edu/cs2114/opendsa/icons/icons8-java60.png" alt=""  width="32" height="32">
       ArrayBasics.java</img>
-      </a>
+      </a>  (right click-> save link as...)
 
 
 .. raw:: html
@@ -55,3 +55,4 @@ Checkpoint 1
 
 .. avembed:: Exercises/SWDesignAndDataStructs/Generics1Checkpoint1Summ.html ka
    :long_name: Checkpoint 1
+

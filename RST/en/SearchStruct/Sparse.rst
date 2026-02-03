@@ -194,9 +194,9 @@ appear as:
 .. math::
 
    \begin{array}{ll}
-   Values:& 10\ 45\ 40\ 23\ 5\ 32\ 93\ 12\ 19\ 7\\
-   Column starts:& 0\ 3\ 5\ 5\ 7\ 7\ 7\ 7\\
-   Row positions:& 0\ 1\ 4\ 0\ 1\ 7\ 1\ 7\ 0\ 7\\
+   \textrm{Values:}& 10\ 45\ 40\ 23\ 5\ 32\ 93\ 12\ 19\ 7\\
+   \textrm{Column starts:}& 0\ 3\ 5\ 5\ 7\ 7\ 7\ 7\\
+   \textrm{Row positions:}& 0\ 1\ 4\ 0\ 1\ 7\ 1\ 7\ 0\ 7\\
    \end{array}
 
 
@@ -212,3 +212,5 @@ removed from the representation.
 Fortunately, when doing computations such as adding or multiplying two
 sparse matrices, the processing of the input matrices and construction
 of the output matrix can be done reasonably efficiently.
+
+

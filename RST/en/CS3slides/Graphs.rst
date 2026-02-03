@@ -6,9 +6,6 @@
 .. avmetadata::
    :author: Cliff Shaffer
 
-.. slideconf::
-   :autoslides: False
-
 ======
 Graphs
 ======
@@ -16,404 +13,526 @@ Graphs
 Graphs
 ------
 
-.. slide:: Graphs
+.. revealjs-slide::
 
-   * A graph :math:`G = (V, E)` consists of a set of vertices :math:`V`,
-     and a set of edges :math:`E`, such that each edge in :math:`E` is a
-     connection between a pair of vertices in :math:`V`.
+* A graph :math:`G = (V, E)` consists of a set of vertices :math:`V`,
+  and a set of edges :math:`E`, such that each edge in :math:`E` is a
+  connection between a pair of vertices in :math:`V`.
 
-   * The number of vertices is written :math:`|V|`, and the number
-     edges is written :math:`|E|`.
+* The number of vertices is written :math:`|V|`, and the number
+  edges is written :math:`|E|`.
 
-
-   .. inlineav:: GdirundirCON dgm 
-      :links: AV/Graph/GraphDefCON.css
-      :scripts: AV/Graph/GdirundirCON.js
-      :output: show
-
-
-.. slide:: Paths, Cycles
-
-   .. inlineav:: GneighborCON dgm
-      :links: AV/Graph/GraphDefCON.css
-      :scripts: AV/Graph/GneighborCON.js
-      :output: show
-
-   .. inlineav:: GpathDefCON dgm 
-      :links: AV/Graph/GraphDefCON.css
-      :scripts: AV/Graph/GpathDefCON.js
-      :output: show 
+.. inlineav:: GdirundirCON dgm 
+   :links: AV/Graph/GraphDefCON.css
+   :scripts: AV/Graph/GdirundirCON.js
+   :output: show
 
 
-.. slide:: Connected Components
+Paths, Cycles
+-------------
 
-   .. inlineav:: GconcomCON dgm
+.. revealjs-slide::
+
+.. inlineav:: GneighborCON dgm
+   :links: AV/Graph/GraphDefCON.css
+   :scripts: AV/Graph/GneighborCON.js
+   :output: show
+
+.. inlineav:: GpathDefCON dgm 
+   :links: AV/Graph/GraphDefCON.css
+   :scripts: AV/Graph/GpathDefCON.js
+   :output: show 
+
+
+Connected Components
+--------------------
+
+.. revealjs-slide::
+
+.. inlineav:: GconcomCON dgm
       :links: AV/Graph/GraphDefCON.css
       :scripts: AV/Graph/GconcomCON.js
       :output: show
 
-   * The maximum connected subgraphs of an undirected graph are called
-     connected components.
+* The maximum connected subgraphs of an undirected graph are called
+  connected components.
 
 
-.. slide:: Directed Graph Representation
+Directed Graph Representation
+-----------------------------
 
-   .. inlineav:: GdirRepCON dgm 
-      :links: AV/Graph/GraphDefCON.css
-      :scripts: AV/Graph/GdirRepCON.js
-      :output: show
+.. revealjs-slide::
 
+.. raw:: html
 
-.. slide:: Undirected Graph Representation
+   <iframe src="../../../Metadata/inlineav/Graph/GdirRepCON.html" 
+           width="960" 
+           height="700" 
+           frameborder="0"
+           style="background: white; display: block; margin: 0 auto;">
+   </iframe>
 
-   .. inlineav:: GundirRepCON dgm 
-      :links: AV/Graph/GraphDefCON.css
-      :scripts: AV/Graph/GundirRepCON.js
-      :output: show 
 
+Undirected Graph Representation
+-------------------------------
 
-.. slide:: Representation Space Costs
+.. revealjs-slide::
 
-   * Adjacency Matrix Space:
-      * :math:`|V|^2`
-      * Small constants
+.. raw:: html
 
-   * Adjacency List Space:
-      * :math:`|V| + |E|`
-      * Larger constants
+   <iframe src="../../../Metadata/inlineav/Graph/GundirRepCON.html" 
+           width="960" 
+           height="700" 
+           frameborder="0"
+           style="background: white; display: block; margin: 0 auto;">
+   </iframe>
 
 
-.. slide:: Graph ADT
+Representation Space Costs
+--------------------------
 
-   .. codeinclude:: Graphs/Graph
-      :tag: GraphADT
+.. revealjs-slide::
 
+* Adjacency Matrix Space:
 
-.. slide:: .
+  * :math:`|V|^2`
+  * Small constants
 
-   .
+* Adjacency List Space:
 
+  * :math:`|V| + |E|`
+  * Larger constants
 
-.. slide:: Visiting Neighbors
 
-   .. codeinclude:: Graphs/GraphDummy
-      :tag: GraphNeighbor
+Graph ADT
+---------
 
+.. revealjs-slide::
 
-.. slide:: Graph Traversals
+.. codeinclude:: Graphs/Graph
+   :tag: GraphADT
 
-   * Some applications require visiting every vertex in the graph exactly
-     once.
 
-   * The application may require that vertices be visited in some special
-     order based on graph topology.
+Visiting Neighbors
+------------------
 
-   * Examples:
-      * Artificial Intelligence Search
-      * Shortest paths problems
+.. revealjs-slide::
 
+.. codeinclude:: Graphs/GraphDummy
+   :tag: GraphNeighbor
 
-.. slide:: Graph Traversals (2)
 
-   * To insure visiting all vertices:
+Graph Traversals
+----------------
 
-   .. codeinclude:: Graphs/GraphTrav
-      :tag: GraphTrav
+.. revealjs-slide::
 
+* Some applications require visiting every vertex in the graph exactly
+  once.
 
-.. slide:: Depth First Search (1)
+* The application may require that vertices be visited in some special
+  order based on graph topology.
 
-   .. codeinclude:: Graphs/DFS
-      :tag: DFS
+* Examples:
 
+  * Artificial Intelligence Search
+  * Shortest paths problems
 
-.. slide:: Depth First Search (2)
 
-   .. inlineav:: DFSCON ss
-      :long_name: Depth-First Search Slideshow
-      :links: AV/Graph/DFSCON.css
-      :scripts: AV/Graph/DFSCON.js
-      :output: show
+Graph Traversals (2)
+--------------------
 
+.. revealjs-slide::
 
-.. slide:: Depth First Search (3)
+* To insure visiting all vertices:
 
-   Cost: :math:`\Theta(|V| + |E|)`.
+.. codeinclude:: Graphs/GraphTrav
+   :tag: GraphTrav
 
 
-.. slide:: Breadth First Search (1)
+Depth First Search (1)
+----------------------
 
-   * Like DFS, but replace stack with a queue.
-      * Visit vertex’s neighbors before continuing deeper in the tree.
+.. revealjs-slide::
 
-   .. codeinclude:: Graphs/BFS
-      :tag: BFS
+.. codeinclude:: Graphs/DFS
+   :tag: DFS
 
 
-.. slide:: Breadth First Search (3)
+Depth First Search (2)
+----------------------
 
-   .. inlineav:: BFSCON ss
-      :long_name: Breadth-First Search Slideshow
-      :links: AV/Graph/BFSCON.css
-      :scripts: AV/Graph/BFSCON.js
-      :output: show
+.. revealjs-slide::
 
+.. inlineav:: DFSCON ss
+   :long_name: Depth-First Search Slideshow
+   :links: AV/Graph/DFSCON.css
+   :scripts: AV/Graph/DFSCON.js
+   :output: show
 
-.. slide:: Topological Sort
 
-   * Problem: Given a set of jobs, courses, etc., with prerequisite
-     constraints, output the jobs in an order that does not violate
-     any of the prerequisites.
+Depth First Search (3)
+----------------------
 
-   .. inlineav:: topsortCON dgm
-      :links: 
-      :scripts: AV/Graph/topSortCON.js
-      :align: center
+.. revealjs-slide::
 
+* Cost: :math:`\Theta(|V| + |E|)`.
 
-.. slide:: Depth-First Topological Sort (1)
 
-   .. codeinclude:: Graphs/TopsortDFS
-      :tag: TopsortDFS
+Breadth First Search (1)
+------------------------
 
+.. revealjs-slide::
 
-.. slide:: Depth-First Topological Sort (1)
+* Like DFS, but replace stack with a queue.
 
-   .. inlineav:: topSortCON ss
-      :scripts: AV/Graph/topSortCON.js
-      :output: show
+  * Visit vertex’s neighbors before continuing deeper in the tree.
 
-.. slide:: .
+.. codeinclude:: Graphs/BFS
+   :tag: BFS
 
-   .
 
+Breadth First Search (3)
+------------------------
 
-.. slide:: Queue-Based Topsort (1)
+.. revealjs-slide::
 
-   .. codeinclude:: Graphs/TopsortBFS
-      :tag: TopsortBFS
+.. inlineav:: BFSCON ss
+   :long_name: Breadth-First Search Slideshow
+   :links: AV/Graph/BFSCON.css
+   :scripts: AV/Graph/BFSCON.js
+   :output: show
 
 
-.. slide:: .
+Topological Sort
+----------------
 
-   .
+.. revealjs-slide::
 
+* Problem: Given a set of jobs, courses, etc., with prerequisite
+  constraints, output the jobs in an order that does not violate
+  any of the prerequisites.
 
-.. slide:: Queue-Based Topsort (2)
-   
-   .. inlineav:: topSortQCON ss
-      :links: AV/Graph/topSortQCON.css
-      :scripts: AV/Graph/topSortQCON.js
-      :output: show
+.. inlineav:: topsortCON dgm
+   :links: 
+   :scripts: AV/Graph/topSortCON.js
+   :align: center
 
-.. slide:: .
 
-   .
+Depth-First Topological Sort (1)
+--------------------------------
 
+.. revealjs-slide::
 
-.. slide:: Shortest Paths Problems
+.. codeinclude:: Graphs/TopsortDFS
+   :tag: TopsortDFS
 
-   * Input: A graph with weights or costs associated with each edge.
 
-   * Output: The list of edges forming the shortest path.
+Depth-First Topological Sort (2)
+--------------------------------
 
-   * Sample problems:
-      * Find shortest path between two named vertices
-      * Find shortest path from S to all other vertices
-      * Find shortest path between all pairs of vertices
+.. revealjs-slide::
 
-   * Will actually calculate only distances.
+.. raw:: html
 
+   <iframe src="../../../Metadata/inlineav/Graph/topSortCON.html" 
+           width="960" 
+           height="700" 
+           frameborder="0"
+           style="background: white; display: block; margin: 0 auto;">
+   </iframe>
 
-.. slide:: Shortest Paths Definitions
 
-   * :math:`d(A, B)` is the shortest distance from vertex :math:`A` to
-     :math:`B`.
+Depth-First Topological Sort (3)
+--------------------------------
 
-   * :math:`w(A, B)` is the weight of the edge connecting :math:`A` to
-     :math:`B`.
-   * If there is no such edge, then :math:`w(A, B) = \infty`.
+.. revealjs-slide::
 
+.. raw:: html
 
-   .. inlineav:: DijkstraCON dgm
-      :scripts: AV/Graph/DijkstraCON.js
-      :align: center
-      :output: show
+   <iframe src="../../../Metadata/inlineav/Graph/topSortDFSCON.html" 
+           width="960" 
+           height="700" 
+           frameborder="0"
+           style="background: white; display: block; margin: 0 auto;">
+   </iframe>
 
 
-.. slide:: Single-Source Shortest Paths
+Queue-Based Topsort (1)
+-----------------------
 
-   * Given start vertex :math:`s`, find the shortest path from
-     :math:`s` to all other vertices.
+.. revealjs-slide::
 
-   * Try 1: Visit vertices in some order, compute shortest paths for
-     all vertices seen so far, then add shortest path to next
-     vertex :math:`x`.
+.. codeinclude:: Graphs/TopsortBFS
+   :tag: TopsortBFS
 
-   * Problem: Shortest path to a vertex already processed might go
-     through :math:`x`.
 
-   * Solution: Process vertices in order of distance from :math:`s`.
+Queue-Based Topsort (2)
+-----------------------
 
+.. revealjs-slide::
 
-.. slide:: Dijkstra’s Algorithm Example
+.. raw:: html
 
-   .. inlineav:: DijkstraCON ss
-      :links: AV/Graph/DijkstraCON.css
-      :scripts: AV/Graph/DijkstraCON.js
-      :output: show
+   <iframe src="../../../Metadata/inlineav/Graph/topSortQCON.html" 
+           width="960" 
+           height="700" 
+           frameborder="0"
+           style="background: white; display: block; margin: 0 auto;">
+   </iframe>
 
-.. slide:: .
 
-   .
+Shortest Paths Problems
+-----------------------
 
-.. slide:: Dijkstra’s Implementation
+.. revealjs-slide::
 
-   .. codeinclude:: Graphs/Dijkstra
-      :tag: GraphDijk1
+* Input: A graph with weights or costs associated with each edge.
 
+* Output: The list of edges forming the shortest path.
 
-.. slide:: Implementing minVertex
+* Sample problems:
 
-   * Issue: How to determine the next-closest vertex? (I.e., implement
-     ``minVertex``)
+  * Find shortest path between two named vertices
+  * Find shortest path from S to all other vertices
+  * Find shortest path between all pairs of vertices
 
-   * Approach 1: Scan through the table of current distances.
-      * Cost: :math:`\Theta(|V|^2 + |E|) = \Theta(|V|^2)`.
+* Will actually calculate only distances.
 
-   * Approach 2: Store unprocessed vertices using a min-heap to
-     implement a priority queue ordered by :math:`D` value.  Must
-     update priority queue for each edge.
-   * Cost: :math:`\Theta((|V| + |E|)log|V|)`
 
+Shortest Paths Definitions
+--------------------------
 
-.. slide:: Approach 1
+.. revealjs-slide::
 
-   .. codeinclude:: Graphs/Dijkstra
-      :tag: MinVertex
+* :math:`d(A, B)` is the shortest distance from vertex :math:`A` to
+  :math:`B`.
 
+* :math:`w(A, B)` is the weight of the edge connecting :math:`A` to
+  :math:`B`.
 
-.. slide:: Approach 2
+* If there is no such edge, then :math:`w(A, B) = \infty`.
 
-   .. codeinclude:: Graphs/DijkstraPQ
-      :tag: DijkstraPQ
+.. inlineav:: DistanceExampCON dgm
+   :links:
+   :scripts: AV/Graph/DistanceExampCON.js
+   :align: center
 
 
-.. slide:: .
+Single-Source Shortest Paths
+----------------------------
 
-   .
+.. revealjs-slide::
 
+* Given start vertex :math:`s`, find the shortest path from
+  :math:`s` to all other vertices.
 
-.. slide:: All-pairs Shortest Paths (1)
+* Try 1: Visit vertices in some order, compute shortest paths for
+  all vertices seen so far, then add shortest path to next
+  vertex :math:`x`.
 
-   * We could run Shortest Paths starting at each vertex.
+* Problem: Shortest path to a vertex already processed might go
+  through :math:`x`.
 
-   * Better is to use Floyd's algorithm.
-      * An example of Dynamic Programming
-      * Simpler than it sounds: A trivial triple loop
+* Solution: Process vertices in order of distance from :math:`s`.
 
-   * Define a k-path from vertex :math:`v` to vertex :math:`u` to be
-     any path whose intermediate vertices (aside from :math:`v` and
-     :math:`u`) all have indices less than :math:`k`.
 
+Dijkstra’s Algorithm Example
+----------------------------
 
-.. slide:: All-pairs Shortest Paths (2)
+.. revealjs-slide::
 
-   .. odsafig:: Images/Floyd.png
-      :width: 400
-      :align: center
-      :capalign: justify
-      :figwidth: 90%
-      :alt: An example of :math:`k`-paths in Floyd's algorithm
 
+.. inlineav:: DijkstraCON ss
+   :links: AV/Graph/DijkstraCON.css
+   :scripts: AV/Graph/DijkstraCON.js
+   :output: show
 
-.. slide:: Floyd's Algorithm
 
-   .. codeinclude:: Graphs/Floyd
-      :tag: Floyd
+Dijkstra’s Implementation
+-------------------------
 
+.. revealjs-slide::
 
-.. slide:: Minimal Cost Spanning Trees
+.. codeinclude:: Graphs/Dijkstra
+   :tag: GraphDijk1
 
-   * Minimal Cost Spanning Tree (MST) Problem:
 
-      * Input: An undirected, connected graph G.
-      * Output: The subgraph of G that
-         1. has minimum total cost as measured by summing the values of all
-            the edges in the subset, and
-         2. keeps the vertices connected.
+Implementing minVertex
+----------------------
 
+.. revealjs-slide::
 
-.. slide:: MST Example
+* Issue: How to determine the next-closest vertex? (I.e., implement
+  ``minVertex``)
 
-   .. inlineav:: MCSTCON dgm
-      :links:
-      :scripts: AV/Graph/MCSTCON.js
-      :align: justify
+* Approach 1: Scan through the table of current distances.
 
+  * Cost: :math:`\Theta(|V|^2 + |E|) = \Theta(|V|^2)`.
 
-.. slide:: Prim’s MST Algorithm
+* Approach 2: Store unprocessed vertices using a min-heap to
+  implement a priority queue ordered by :math:`D` value.  Must
+  update priority queue for each edge.
 
-   .. inlineav:: primCON ss
-      :links: AV/Graph/primCON.css
-      :scripts: AV/Graph/primCON.js
-      :output: show
+  * Cost: :math:`\Theta((|V| + |E|)\log|V|)`
 
 
-.. slide:: .
+Approach 1
+----------
 
-   .
+.. revealjs-slide::
 
+.. codeinclude:: Graphs/Dijkstra
+   :tag: MinVertex
 
-.. slide:: Implementation 1
 
-   .. codeinclude:: Graphs/Prim
-      :tag: Prims
+Approach 2
+----------
 
+.. revealjs-slide::
 
-.. slide:: Alternate Implementation
+.. codeinclude:: Graphs/DijkstraPQ
+   :tag: DijkstraPQ
 
-   * As with Dijkstra’s algorithm, the key issue is determining which
-     vertex is next closest.
 
-   * As with Dijkstra’s algorithm, the alternative is to use a
-     priority queue.
+All-pairs Shortest Paths (1)
+----------------------------
 
-   * Running times for the two implementations are identical to the
-     corresponding Dijkstra’s algorithm implementations.
+.. revealjs-slide::
 
+* We could run Shortest Paths starting at each vertex.
 
-.. slide:: Kruskal’s MST Algorithm (1)
+* Better is to use Floyd's algorithm.
 
-   * Initially, each vertex is in its own MST.
+  * An example of Dynamic Programming
+  * Simpler than it sounds: A trivial triple loop
 
-   * Merge two MST’s that have the shortest edge between them.
-      * Use a priority queue to order the unprocessed edges.  Grab
-        next one at each step.
+* Define a k-path from vertex :math:`v` to vertex :math:`u` to be
+  any path whose intermediate vertices (aside from :math:`v` and
+  :math:`u`) all have indices less than :math:`k`.
 
-   * How to tell if an edge connects two vertices already in the same
-     MST?
-   * Use the UNION/FIND algorithm with parent-pointer
-        representation.
 
+All-pairs Shortest Paths (2)
+----------------------------
 
-.. slide:: Kruskal’s MST Algorithm (2)
+.. revealjs-slide::
 
-   .. inlineav:: kruskalCON ss
-      :long_name: Kruskal Slideshow
-      :links: AV/Graph/kruskalCON.css
-      :scripts: AV/Graph/kruskalCON.js
-      :output: show
+.. image:: /Images/Floyd.png
+   :width: 400
+   :align: center
+   :alt: An example of :math:`k`-paths in Floyd's algorithm
 
 
-.. slide:: .
+Floyd's Algorithm
+-----------------
 
-   .
+.. revealjs-slide::
 
+.. codeinclude:: Graphs/Floyd
+   :tag: Floyd
 
-.. slide:: Kruskal’s MST Algorithm (3)
 
-   * Cost is dominated by the time to remove edges from the heap.
-      * Can stop processing edges once all vertices are in the same MST
+Minimal Cost Spanning Trees
+---------------------------
 
-   * Total cost: :math:`\Theta(|V| + |E| log |E|)`.
+.. revealjs-slide::
+
+* Minimal Cost Spanning Tree (MST) Problem:
+
+* Input: An undirected, connected graph G.
+
+  * Output: The subgraph of G that
+
+    1. has minimum total cost as measured by summing the values of all
+       the edges in the subset, and
+    2. keeps the vertices connected.
+
+
+MST Example
+-----------
+
+.. revealjs-slide::
+
+.. inlineav:: MCSTCON dgm
+   :links:
+   :scripts: AV/Graph/MCSTCON.js
+   :align: justify
+
+
+Prim’s MST Algorithm
+--------------------
+
+.. revealjs-slide::
+
+.. inlineav:: primCON ss
+   :links: AV/Graph/primCON.css
+   :scripts: AV/Graph/primCON.js
+   :output: show
+
+
+Implementation 1
+----------------
+
+.. revealjs-slide::
+
+.. codeinclude:: Graphs/Prim
+   :tag: Prims
+
+
+Alternate Implementation
+------------------------
+
+.. revealjs-slide::
+
+* As with Dijkstra’s algorithm, the key issue is determining which
+  vertex is next closest.
+
+* As with Dijkstra’s algorithm, the alternative is to use a
+  priority queue.
+
+* Running times for the two implementations are identical to the
+  corresponding Dijkstra’s algorithm implementations.
+
+
+Kruskal’s MST Algorithm (1)
+---------------------------
+
+.. revealjs-slide::
+
+* Initially, each vertex is in its own MST.
+
+* Merge two MST’s that have the shortest edge between them.
+
+  * Use a priority queue to order the unprocessed edges.  Grab
+    next one at each step.
+
+* How to tell if an edge connects two vertices already in the same
+  MST?
+
+  * Use the UNION/FIND algorithm with parent-pointer representation.
+
+
+Kruskal’s MST Algorithm (2)
+---------------------------
+
+.. revealjs-slide::
+
+.. inlineav:: kruskalCON ss
+   :long_name: Kruskal Slideshow
+   :links: AV/Graph/kruskalCON.css
+   :scripts: AV/Graph/kruskalCON.js
+   :output: show
+
+
+Kruskal’s MST Algorithm (3)
+---------------------------
+
+.. revealjs-slide::
+
+* Cost is dominated by the time to remove edges from the heap.
+
+  * Can stop processing edges once all vertices are in the same MST
+
+* Total cost: :math:`\Theta(|V| + |E| log |E|)`.
+
+

@@ -2293,7 +2293,7 @@ Glossary
       removed (and replaced at their proper location in the array).
 
    height
-      The height of a tree is one more than the :term:`depth` of the
+      The height of a tree is the :term:`depth` of the
       deepest :term:`node` in the tree.
 
    height balanced
@@ -5461,3 +5461,5 @@ Glossary
       The next zone can then reset the data density for its innermost
       track, thereby gaining more total storage space while preserving
       angular distance for each sector.
+
+

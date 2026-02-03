@@ -4,8 +4,10 @@
 .. distributed under an MIT open source license.
 
 .. avmetadata::
+   :title: The Fast Fourier Transform
    :author: Cliff Shaffer; Irena Shaffer
    :requires: transforms
+   :institution: Virginia Tech
    :satisfies: FFT
    :topic: Algorithms: Fast Fourier Transform
    :keyword: Fast Fourier Transform; Polynomial Multiplication
@@ -249,3 +251,5 @@ Thus, the full process for multiplying polynomials
 
 #. Perform the inverse Fourier transform to get the :math:`2n-1`
    degree polynomial :math:`AB`.
+
+

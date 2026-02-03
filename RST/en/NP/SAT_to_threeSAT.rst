@@ -4,10 +4,14 @@
 .. distributed under an MIT open source license.
 
 .. avmetadata::
+   :title: Reduction of SAT to 3-SAT
    :author: Nabanita Maji
+   :institution: Virginia Tech
    :topic: NP-completeness
-   :keyword: NP-completeness; NP-completeness Proofs; Satisfiability Problem
-
+   :keyword: NP-Completeness Proof; Satisfiability Problem
+   :naturallanguage: en
+   :programminglanguage: N/A
+   :description: Presents a proof that 3-CNF Satisfiability is NP-Complete, by a reduction from Satisfiability.
 
 Reduction of SAT to 3-SAT
 =========================
@@ -26,3 +30,5 @@ Satisfiability (**3-SAT**) problem in polynomial time.
    :keyword: NP-completeness; NP-completeness Proofs; Satisfiability
 
 This reduction can help in providing an NP Completeness proof for 3-SAT.
+
+

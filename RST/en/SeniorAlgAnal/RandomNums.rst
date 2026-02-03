@@ -8,7 +8,7 @@
    :author: Cliff Shaffer
    :institution: Virginia Tech
    :topic: Randomized Algorithms
-   :keyword: Random Number Generator; Linear Conguential Method
+   :keyword: Random Number
    :naturallanguage: en
    :programminglanguage: N/A
    :description: Brief introduction to the implementation of Linear Congruential random number generators
@@ -126,3 +126,5 @@ your own, an effective one can be made with the following formula.
        using a computer chip that generates random numbers resulting
        from "thermal noise" in the system.
        Time will tell if this approach replaces deterministic approaches.
+
+

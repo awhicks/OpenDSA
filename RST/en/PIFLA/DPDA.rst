@@ -4,11 +4,15 @@
 .. distributed under an MIT open source license.
 
 .. avmetadata::
-   :author: Mostafa Mohammed and Cliff Shaffer
+   :title: Deterministic Pushdown Automata
+   :author: Mostafa Mohammed; Cliff Shaffer
+   :institution: Virginia Tech
    :satisfies: PDA Module
    :topic: Deterministic Pushdown Automata
    :keyword: Deterministic Pushdown Automata
-
+   :naturallanguage: en
+   :programminglanguage: N/A
+   :description: Explores the relationship between deterministic and non-deterministic PDAs.
 
 Deterministic Pushdown Automata
 ===============================
@@ -56,3 +60,5 @@ Grammars for Deterministic Context-free Languages
    :scripts: lib/underscore.js DataStructures/FLA/FA.js DataStructures/FLA/PDA.js DataStructures/PIFrames.js AV/PIFLA/PDA/GrammarsForDCFLFS.js
    :output: show
    :keyword: Deterministic Pushdown Automata
+
+

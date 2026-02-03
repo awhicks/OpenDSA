@@ -9,7 +9,6 @@ import re
 import json
 import xml.dom.minidom as minidom
 from collections.abc import Iterable
-
 from xml.etree.ElementTree import ElementTree
 from bs4 import BeautifulSoup
 import shutil
@@ -55,9 +54,6 @@ def update_index_html(dest_dir, startSectNum):
       index_html[line_num] = line.replace('</head>','<style>\nul li {\n\tbackground: none;\n\tlist-style-type: none;\n}\n</style>\n</head>')
     elif 'class="sectnum"' in line:
       sectNum += 1 # the start of a new sub-TOC for chapter/section
-    elif 'RegisterBook' in line:
-      #remove registerbook page from TOC
-      index_html[line_num] = ''
     elif 'hide-from-toc' in line:
       #remove stub chapter title
       if '<h1>' in index_html[line_num-1]:
@@ -80,7 +76,7 @@ def update_mod_html(file_path, data, prefix, standalone_modules):
 
   mod_name = os.path.splitext(os.path.basename(file_path))[0]
 
-  ignore_mods = ['index', 'Gradebook', 'search', 'RegisterBook']
+  ignore_mods = ['index', 'Gradebook', 'search']
 
   link_pattern = re.compile(r'<a.+href="(?P<href>.*).html">(?P<text>.*)</a>')
   title_pattern = re.compile(r'<title>(?P<title>.*)</title>')
@@ -93,13 +89,9 @@ def update_mod_html(file_path, data, prefix, standalone_modules):
       link_text = m.group('text')
       link_mod = m.group('href')
 
-      if link_mod in data and link_mod not in ['index', 'Gradebook', 'ToDo', 'RegisterBook']:
+      if link_mod in data and link_mod not in ['index', 'Gradebook', 'ToDo']:
         new_link_text = '%s.' % data[link_mod][1] + link_text
         html[line_num] = line.replace(link_text, new_link_text)
-
-      if link_mod in ['RegisterBook']:
-        html[line_num] = line.replace(link_text, "")
-
 
     if '&lt;anchor-text&gt;' in line:
       line_args = re.split('&lt;anchor-text&gt;|&lt;/anchor-text&gt;', line)
@@ -318,7 +310,20 @@ def break_up_sections(path, module_data, config, standalone_modules):
   element = soup.find('img', alt='nsf')
   if element:
     element.extract()
+  # Inject exercise widget for this module
+  widget = create_exercise_widget(module_data, mod_name, config)
+  if widget:
+  # Find the body and inject widget at the beginning
+    body = soup.find('body')
+    if body and body.contents:
+      # Insert at the beginning of body content
+      body.insert(0, widget)
+      print(f"✅ Injected exercise widget into {mod_name}")
+  else:
+    print(f"ℹ️  No exercises with points found in {mod_name}")
 
+  
+  
   filename = mod_name + '.html'
   single_file_path = os.path.join(os.path.dirname(path), '..', 'lti_html', filename)
   
@@ -341,7 +346,7 @@ def make_lti(config, no_lms = False, standalone_modules = False):
   dest_dir = config.book_dir + config.rel_book_output_path
   # Iterate through all of the existing files
   ignore_files = ('Gradebook.html', 'search.html', 'conceptMap.html',
-                  'genindex.html', 'RegisterBook.html', 'index.html')
+                  'genindex.html', 'index.html')
   html_files = [path for path in os.listdir(dest_dir)
                 if path.endswith('.html') and path not in ignore_files]
 
@@ -360,7 +365,7 @@ def make_lti(config, no_lms = False, standalone_modules = False):
   config_file_path = os.path.join(dest_dir, '..', 'lti_html', 'lti_config.json')
   with open(config_file_path, 'wt', encoding='utf-8') as o:
     o.write(json.dumps(config.__dict__))
-
+  
 
 def get_module_map(config):
     """extract module map from config object"""
@@ -397,3 +402,350 @@ def main(argv):
 
 if __name__ == "__main__":
    sys.exit(main(sys.argv))
+
+
+def create_exercise_widget(module_data, mod_name, config):
+    """
+    Creates exercise widget HTML for a specific module to display exercise overview
+    Widget dynamically populates with exercises from API and config
+    """
+    import json
+    
+    exercises_dict = module_data.get('exercises', {})
+    
+    glob_extr_options = getattr(config, 'glob_extr_options', {})
+    default_cw_points = glob_extr_options.get('code-workout', {}).get('points', 2)
+    
+    regular_exercises_config = []
+    for name, data in exercises_dict.items():
+        if data.get('learning_tool') != 'code-workout':
+            points = data.get('points', 0)
+            if points > 0:
+                regular_exercises_config.append({
+                    'name': data.get('long_name', name),
+                    'points': points,
+                    'id': data.get('id')
+                })
+    
+    codeworkout_exercises = []
+    for name, data in exercises_dict.items():
+        if data.get('learning_tool') == 'code-workout':
+            launch_url = data.get('launch_url', '')
+            exercise_id = launch_url.split('/')[-1] if launch_url else None
+            
+            points = data.get('points', default_cw_points)
+            
+            codeworkout_exercises.append({
+                'name': data.get('long_name', name),
+                'id': exercise_id,
+                'points': points
+            })
+    
+    regular_exercises_json = json.dumps(regular_exercises_config)
+    codeworkout_json = json.dumps(codeworkout_exercises)
+    
+    widget_id = f"exercise-widget-{mod_name.replace(' ', '-')}"
+    
+    widget_html = f'''
+<div id="exercise-summary-widget" style="border: 2px solid #0056b3; padding: 10px 15px; margin: 15px 0; background-color: #f8f9fa; border-radius: 8px;">
+    <!-- Hamburger Header (Always Visible) -->
+    <div id="{widget_id}-header" style="cursor: pointer; display: flex; align-items: center; justify-content: space-between;" onclick="toggleExerciseWidget('{widget_id}')">
+        <div style="display: flex; align-items: center;">
+            <span id="{widget_id}-icon" style="font-size: 18px; margin-right: 10px; color: #0056b3;">☰</span>
+            <span style="color: #0056b3; font-weight: bold;">Exercise Overview</span>
+            <span id="{widget_id}-progress" style="margin-left: 10px; color: #495057;">Loading...</span>
+        </div>
+        <span id="{widget_id}-arrow" style="color: #0056b3; font-size: 14px; transform: rotate(0deg); transition: transform 0.3s;">▼</span>
+    </div>
+    
+    <!-- Exercise Details (Initially Hidden) -->
+    <div id="{widget_id}-content" style="display: none; margin-top: 15px; padding-top: 10px; border-top: 1px solid #dee2e6;">
+        <h4 style="margin: 0 0 10px 0; color: #0056b3;">📊 {mod_name} - Exercise Details</h4>
+        <div id="{widget_id}-regular-section">
+            <ul id="{widget_id}-exercise-list" style="margin: 0; padding-left: 20px; list-style: none;">
+                <li style="color: #999;">Loading exercises...</li>
+            </ul>
+        </div>
+        <div id="{widget_id}-codeworkout-container"></div>
+    </div>
+</div>
+
+<script>
+// Config data
+var regularExercisesConfig = {regular_exercises_json};
+var codeWorkoutConfigExercises = {codeworkout_json};
+
+function toggleExerciseWidget(widgetId) {{
+    var content = document.getElementById(widgetId + '-content');
+    var icon = document.getElementById(widgetId + '-icon');
+    var arrow = document.getElementById(widgetId + '-arrow');
+    
+    if (content.style.display === 'none') {{
+        content.style.display = 'block';
+        icon.innerHTML = '✕';  
+        arrow.style.transform = 'rotate(180deg)';  
+    }} else {{
+        content.style.display = 'none';
+        icon.innerHTML = '☰';  
+        arrow.style.transform = 'rotate(0deg)';   
+    }}
+}}
+
+if (typeof ODSA !== 'undefined' && ODSA.TP && ODSA.TP.courseOfferingId) {{
+    var hasCodeWorkout = codeWorkoutConfigExercises.length > 0;
+    
+    fetch('/course_offerings/' + ODSA.TP.courseOfferingId + '/exercise_list?check_proficiency=true')
+        .then(function(response) {{ return response.json(); }})
+        .then(function(data) {{
+            var exerciseAttempts = data.odsa_exercise_attempts;
+            var urlParams = new URLSearchParams(window.location.search);
+            var moduleTitle = decodeURIComponent(urlParams.get('custom_module_title') || '');
+            var moduleNumber = moduleTitle.match(/^(\d+\.\d+)/);
+            
+            if (moduleNumber) {{
+                moduleNumber = moduleNumber[1];
+                
+                // Get API exercises for this module (in order)
+                var apiExercises = [];
+                Object.keys(exerciseAttempts).forEach(function(sectionId) {{
+                    var exerciseTitle = exerciseAttempts[sectionId][0];
+                    if (exerciseTitle.indexOf(moduleNumber) === 0) {{
+                        var isComplete = exerciseAttempts[sectionId].indexOf('complete_flag') !== -1;
+                        apiExercises.push({{
+                            title: exerciseTitle,
+                            isComplete: isComplete,
+                            sectionId: sectionId
+                        }});
+                    }}
+                }});
+                
+                // Sort API exercises by title to ensure consistent order
+                apiExercises.sort(function(a, b) {{
+                    return a.title.localeCompare(b.title);
+                }});
+                
+                // Match by order: pair config exercises with API exercises
+                var moduleExercises = [];
+                var totalPoints = 0;
+                var earnedPoints = 0;
+                
+                for (var i = 0; i < Math.max(regularExercisesConfig.length, apiExercises.length); i++) {{
+                    var configEx = regularExercisesConfig[i];
+                    var apiEx = apiExercises[i];
+                    
+                    if (configEx && apiEx) {{
+                        totalPoints += configEx.points;
+                        if (apiEx.isComplete) {{
+                            earnedPoints += configEx.points;
+                        }}
+                        
+                        moduleExercises.push({{
+                            title: configEx.name,
+                            isComplete: apiEx.isComplete,
+                            points: configEx.points
+                        }});
+                    }} else if (configEx) {{
+                        totalPoints += configEx.points;
+                        moduleExercises.push({{
+                            title: configEx.name,
+                            isComplete: false,
+                            points: configEx.points
+                        }});
+                    }} else if (apiEx) {{
+                        moduleExercises.push({{
+                            title: apiEx.title,
+                            isComplete: apiEx.isComplete,
+                            points: 0
+                        }});
+                    }}
+                }}
+                
+                var progressSpan = document.getElementById('{widget_id}-progress');
+                var exerciseList = document.getElementById('{widget_id}-exercise-list');
+                var regularSection = document.getElementById('{widget_id}-regular-section');
+                
+                if (moduleExercises.length > 0) {{
+                    exerciseList.innerHTML = '';
+                    moduleExercises.forEach(function(exercise) {{
+                        var li = document.createElement('li');
+                        li.style.marginBottom = '8px';
+                        li.style.position = 'relative';
+                        li.style.paddingLeft = '25px';
+                        
+                        var icon = document.createElement('span');
+                        icon.style.position = 'absolute';
+                        icon.style.left = '0';
+                        icon.style.fontSize = '16px';
+                        
+                        if (exercise.isComplete) {{
+                            icon.innerHTML = '✓';
+                            icon.style.color = '#28a745';
+                            icon.style.fontWeight = 'bold';
+                            li.style.color = '#28a745';
+                        }} else {{
+                            icon.innerHTML = '○';
+                            icon.style.color = '#6c757d';
+                        }}
+                        
+                        li.appendChild(icon);
+                        
+                        var text = document.createElement('span');
+                        text.innerHTML = '<strong>' + exercise.title + '</strong>' + 
+                                        (exercise.points > 0 ? ' (' + exercise.points + ' pts)' : '');
+                        li.appendChild(text);
+                        
+                        exerciseList.appendChild(li);
+                    }});
+                    
+                    // Only show points if there are regular exercises with points
+                    if (totalPoints > 0) {{
+                        progressSpan.textContent = '(' + earnedPoints + '/' + totalPoints + ' points)';
+                    }} else {{
+                        progressSpan.textContent = '';
+                    }}
+                }} else {{
+                    if (hasCodeWorkout) {{
+                        regularSection.style.display = 'none';
+                        progressSpan.textContent = '';
+                    }} else {{
+                        exerciseList.innerHTML = '<li style="color: #999;">No exercises found for this module</li>';
+                        progressSpan.textContent = '(0 points)';
+                    }}
+                }}
+                
+                // Handle CodeWorkout exercises
+                if (hasCodeWorkout) {{
+                    var cwContainer = document.getElementById('{widget_id}-codeworkout-container');
+                    
+                    var cwHeader = document.createElement('h5');
+                    cwHeader.textContent = 'CodeWorkout Exercises';
+                    cwHeader.style.marginTop = moduleExercises.length > 0 ? '15px' : '0';
+                    cwHeader.style.color = '#0056b3';
+                    cwContainer.appendChild(cwHeader);
+                    
+                    var cwList = document.createElement('ul');
+                    cwList.style.margin = '0';
+                    cwList.style.paddingLeft = '20px';
+                    cwList.style.listStyle = 'none';
+                    cwContainer.appendChild(cwList);
+                    
+                    var codeWorkoutTotalPoints = 0;
+                    var codeWorkoutEarnedPoints = 0;
+                    var codeWorkoutChecked = 0;
+                    
+                    // Calculate total CodeWorkout points
+                    codeWorkoutConfigExercises.forEach(function(ex) {{
+                        codeWorkoutTotalPoints += ex.points;
+                    }});
+                    
+                    codeWorkoutConfigExercises.forEach(function(exercise, index) {{
+                        var li = document.createElement('li');
+                        li.id = '{widget_id}-cw-' + index;
+                        li.style.marginBottom = '8px';
+                        li.style.position = 'relative';
+                        li.style.paddingLeft = '25px';
+                        li.style.color = '#999';
+                        li.innerHTML = '<span style="position: absolute; left: 0;">○</span>Loading...';
+                        cwList.appendChild(li);
+                    }});
+                    
+                    codeWorkoutConfigExercises.forEach(function(exercise, index) {{
+                        if (!exercise.id) {{
+                            codeWorkoutChecked++;
+                            var li = document.getElementById('{widget_id}-cw-' + index);
+                            if (li) {{
+                                li.innerHTML = '<span style="position: absolute; left: 0;">○</span><strong>' + 
+                                              exercise.name + '</strong>' + 
+                                              (exercise.points > 0 ? ' (' + exercise.points + ' pts)' : '');
+                            }}
+                            return;
+                        }}
+                        
+                        fetch('/course_offerings/' + ODSA.TP.courseOfferingId + '/codeworkout_progress?inst_book_section_exercise_id=' + exercise.id)
+                            .then(function(response) {{ return response.json(); }})
+                            .then(function(cwData) {{
+                                var isComplete = cwData.proficient_date && cwData.proficient_date !== null;
+                                if (isComplete) {{
+                                    codeWorkoutEarnedPoints += exercise.points;
+                                }}
+                                codeWorkoutChecked++;
+                                
+                                var li = document.getElementById('{widget_id}-cw-' + index);
+                                if (li) {{
+                                    li.style.paddingLeft = '25px';
+                                    
+                                    var icon = document.createElement('span');
+                                    icon.style.position = 'absolute';
+                                    icon.style.left = '0';
+                                    icon.style.fontSize = '16px';
+                                    
+                                    if (isComplete) {{
+                                        icon.innerHTML = '✓';
+                                        icon.style.color = '#28a745';
+                                        icon.style.fontWeight = 'bold';
+                                        li.style.color = '#28a745';
+                                    }} else {{
+                                        icon.innerHTML = '○';
+                                        icon.style.color = '#6c757d';
+                                        li.style.color = '';
+                                    }}
+                                    
+                                    var text = document.createElement('span');
+                                    text.innerHTML = '<strong>' + exercise.name + '</strong>' + 
+                                                    (exercise.points > 0 ? ' (' + exercise.points + ' pts)' : '');
+                                    
+                                    li.innerHTML = '';
+                                    li.appendChild(icon);
+                                    li.appendChild(text);
+                                }}
+                                
+                                if (codeWorkoutChecked === codeWorkoutConfigExercises.length) {{
+                                    var finalEarned = earnedPoints + codeWorkoutEarnedPoints;
+                                    var finalTotal = totalPoints + codeWorkoutTotalPoints;
+                                    if (progressSpan && finalTotal > 0) {{
+                                        progressSpan.textContent = '(' + finalEarned + '/' + finalTotal + ' points)';
+                                    }} else if (finalTotal === 0) {{
+                                        progressSpan.textContent = '';
+                                    }}
+                                }}
+                            }})
+                            .catch(function(error) {{
+                                codeWorkoutChecked++;
+                                
+                                var li = document.getElementById('{widget_id}-cw-' + index);
+                                if (li) {{
+                                    li.innerHTML = '<span style="position: absolute; left: 0;">○</span><strong>' + 
+                                                  exercise.name + '</strong>' + 
+                                                  (exercise.points > 0 ? ' (' + exercise.points + ' pts)' : '');
+                                    li.style.color = '';
+                                }}
+                                
+                                if (codeWorkoutChecked === codeWorkoutConfigExercises.length) {{
+                                    var finalEarned = earnedPoints + codeWorkoutEarnedPoints;
+                                    var finalTotal = totalPoints + codeWorkoutTotalPoints;
+                                    if (progressSpan && finalTotal > 0) {{
+                                        progressSpan.textContent = '(' + finalEarned + '/' + finalTotal + ' points)';
+                                    }} else if (finalTotal === 0) {{
+                                        progressSpan.textContent = '';
+                                    }}
+                                }}
+                            }});
+                    }});
+                }}
+            }}
+        }})
+        .catch(function(error) {{
+            var progressSpan = document.getElementById('{widget_id}-progress');
+            if (progressSpan) {{
+                progressSpan.textContent = 'Error loading exercises';
+            }}
+        }});
+}} else {{
+    var progressSpan = document.getElementById('{widget_id}-progress');
+    if (progressSpan) {{
+        progressSpan.textContent = 'Not available';
+    }}
+}}
+</script>'''
+    
+    return BeautifulSoup(widget_html, 'html.parser')

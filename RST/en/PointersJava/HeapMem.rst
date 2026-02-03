@@ -10,7 +10,7 @@
    :requires: Local memory
    :satisfies: Heap Memory
    :topic: Pointers
-   :keyword: Pointers; Heap Memory; Garbage Disposal
+   :keyword: Pointer; Heap Memory; Garbage Collection
    :naturallanguage: en
    :programminglanguage: Java
    :description: Introduces the concept of heap memory and global variables.
@@ -324,4 +324,6 @@ explicit allocation calls to manage the heap memory, and the program
 has to wait when the garbage collector runs.
 The heap memory does not operate automatically
 and conveniently the way local memory does.
+
+
 

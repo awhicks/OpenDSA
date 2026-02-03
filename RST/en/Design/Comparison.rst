@@ -12,7 +12,7 @@
    :topic: Sorting
    :keyword: Record Comparison; Comparator
    :naturallanguage: en
-   :programminglanguage: Java; CPP
+   :programminglanguage: Java; C++
    :description: Discusses design decisions related to comparing records, including the concept of a comparator.
 
 .. index::
@@ -188,3 +188,5 @@ Here are some review questions to test your knowledge from this module.
        the record.
        Thus, we cannot write a function that extracts the key from
        such a record.
+
+

@@ -12,7 +12,7 @@
    :topic: Sorting
    :keyword: Sorting; Insertion Sort
    :naturallanguage: en
-   :programminglanguage: Java; CPP
+   :programminglanguage: Java; C++
    :description: Presentation of Insertion Sort including visualizations, code, and self-test questions and exercises
 
 .. index:: ! Insertion Sort
@@ -182,3 +182,5 @@ search and insert can affect what is the best sort algorithm to use.
 
 .. `Computational Fairy Tales: Why Tailors Use Insertion Sort
 .. <http://computationaltales.blogspot.com/2011/04/why-tailors-use-insertion-sort.html target = "_blank">`_
+
+

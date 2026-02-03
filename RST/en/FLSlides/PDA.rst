@@ -217,3 +217,5 @@ Pushdown Automata
    |   2. Finish string with an empty stack.
 
    We can show that these two are equivalent. (What does equivalent mean?)
+
+

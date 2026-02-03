@@ -4,11 +4,16 @@
 .. distributed under an MIT open source license.
 
 .. avmetadata::
+   :title: Radix Sort
    :author: Cliff Shaffer
+   :institution: Virginia Tech
    :satisfies: radix sort
    :requires: binsort
    :topic: Sorting
-   :keyword: Sorting; Radix Sort; Non-comparison Sort
+   :keyword: Radix Sort; Non-Comparison Sort
+   :naturallanguage: en
+   :programminglanguage: Java
+   :description: Presentation of Radix Sort, including visualizations, analysis, and self-practice exercises.
 
 .. index:: ! Radix Sort
 
@@ -97,13 +102,10 @@ array.
 The first inner ``for`` loop initializes array ``count``.
 The second loop counts the number of records to be assigned to each
 bin.
-The third loop sets the values in ``count`` to their proper
+The third loop changes the values in ``count`` from counts to
 indices within array ``B``.
-Note that the index stored in ``count[j]``
-is the *last* index for bin ``j``; bins are filled
-from high index to low index.
 The fourth loop assigns the records to the bins (within
-array ``B``).
+array ``B``) from right to left.
 The final loop simply copies the records back to
 array ``A`` to be ready for the next pass.
 Variable ``rtoi`` stores :math:`r^i` for use in bin computation
@@ -198,3 +200,5 @@ appropriate for these situations.
 .. avembed:: Exercises/Sorting/RadixSortSumm.html ka
    :long_name: Radix Sort Summary Exercise
    :keyword: Sorting; Radix Sort; Non-comparison Sort
+
+

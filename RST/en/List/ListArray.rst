@@ -4,11 +4,16 @@
 .. distributed under an MIT open source license.
 
 .. avmetadata::
+   :title: Lists and the Array-Based List Implementation
    :author: Cliff Shaffer
+   :institution: Virginia Tech
    :requires: list ADT
    :satisfies: array-based list
    :topic: Lists
-   :keyword: Array-based List Implementation
+   :keyword: Array-Based List
+   :naturallanguage: en
+   :programminglanguage: Java
+   :description: Presents an implementation for lists stored in arrays.
 
 
 Array-Based List Implementation
@@ -112,3 +117,5 @@ Array-based List Practice Questions
 .. avembed:: Exercises/List/ALSumm.html ka
    :long_name: Array-based List Summary
    :keyword: Array-based List
+
+

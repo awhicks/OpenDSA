@@ -12,7 +12,7 @@
    :topic: Design
    :keyword: Dictionary
    :naturallanguage: en
-   :programminglanguage: Java; CPP
+   :programminglanguage: Java
    :description: Presents the concept of a dictionary illustrated by an ADT and examples of use.
 
 
@@ -210,3 +210,5 @@ search, and delete in :math:`\Theta(\log n)` time.
 .. avembed:: Exercises/Design/DesignDictionarySumm.html ka
    :long_name: Dictionary Summary Exercise
    :keyword: Dictionary
+
+

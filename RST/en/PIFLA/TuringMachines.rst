@@ -4,12 +4,16 @@
 .. distributed under an MIT open source license.
 
 .. avmetadata::
-   :author: Mostafa Mohammed and Cliff Shaffer
+   :title: Introduction to Turing Machines
+   :author: Mostafa Mohammed; Cliff Shaffer
+   :institution: Virginia Tech
    :requires:
    :satisfies:
    :topic: Turing Machines
-   :keyword: Turing Machines
-
+   :keyword: Turing Machine
+   :naturallanguage: en
+   :programminglanguage: N/A
+   :description: Introduction to Turing machines.
 
 Introduction to Turing Machines
 ===============================
@@ -150,3 +154,5 @@ Turing-Decidable vs. Turing-Acceptable Languages
    :scripts:  lib/underscore.js DataStructures/FLA/FA.js DataStructures/FLA/TuringMachine.js DataStructures/PIFrames.js AV/PIFLA/TM/TMDecidableFS.js
    :output: show
    :keyword: Turing Machines
+
+

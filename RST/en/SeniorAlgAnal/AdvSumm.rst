@@ -8,7 +8,7 @@
    :author: Cliff Shaffer
    :institution: Virginia Tech
    :topic: Advanced Analysis
-   :keyword: Algorithm Analysis; Summations
+   :keyword: Algorithm Analysis; Summation
    :naturallanguage: en
    :programminglanguage: N/A
    :description: Presents an intermediate-level survey of techniques for finding closed-form solutions for summations, appropriate for a senior-level algorithms course.
@@ -382,3 +382,5 @@ Here is another example.
    :scripts: AV/SeniorAlgAnal/GeometricSumProofCON.js
    :output: show
    :keyword: Algorithm Analysis; Summations
+
+

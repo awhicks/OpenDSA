@@ -10,7 +10,7 @@
    :requires:
    :satisfies:
    :topic: Concept Maps
-   :keyword: Pointers
+   :keyword: Pointer
    :naturallanguage: en
    :programminglanguage: Java
    :description: Concept map of pointer concepts.
@@ -23,3 +23,5 @@ Pointers Concepts Summary
 
 .. avembed:: Exercises/CMP/CMpointersSumm.html ka
    :long_name: Concept map pointers exercises
+
+

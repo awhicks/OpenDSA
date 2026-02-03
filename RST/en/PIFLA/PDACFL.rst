@@ -4,11 +4,15 @@
 .. distributed under an MIT open source license.
 
 .. avmetadata::
+   :title: PDAs and Context Free Languages
    :author: Mostafa Mohammed
+   :institution: Virginia Tech
    :satisfies: PDA Module
    :topic: PDAs and Context Free Languages
-   :keyword: Pushdown Automaton; Context Free Languages
-
+   :keyword: Pushdown Automata; Context-Free Language
+   :naturallanguage: en
+   :programminglanguage: N/A
+   :description: Explores the relationship between PDAs and Context Free Languages.
 
 PDAs and Context Free Languages
 ===============================
@@ -301,3 +305,5 @@ transitions in a simpler form.
    | Must show that the constructed grammar :math:`G` is such that
      :math:`L(G) = L(M')`. 
      That is, :math:`w \in L(G)` iff :math:`w \in L(M)`. QED.
+
+
