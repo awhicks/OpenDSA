@@ -4,6 +4,6 @@ public void springFreeze(int temp) {
     }
     else {
         System.out.println("temps are dropping...");
-        springFreeze( - 4);
+        springFreeze(temp - 4);
     }
 }
